@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WafyOps - Developer & Utility Toolbox</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Space Grotesk & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-terminal brand-icon"></i>
+                <span class="brand-text">Wafy<span class="accent-text">Ops</span></span>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-item active" data-target="dashboard">
+                    <i class="fa-solid fa-chart-simple"></i> <span>Dashboard</span>
+                </button>
+                <button class="nav-item" data-target="password-gen">
+                    <i class="fa-solid fa-key"></i> <span>Password Generator</span>
+                </button>
+                <button class="nav-item" data-target="text-converter">
+                    <i class="fa-solid fa-font"></i> <span>Text Utilities</span>
+                </button>
+                <button class="nav-item" data-target="qr-gen">
+                    <i class="fa-solid fa-qrcode"></i> <span>QR Generator</span>
+                </button>
+                <button class="nav-item" data-target="color-picker">
+                    <i class="fa-solid fa-palette"></i> <span>Color Palette</span>
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <span class="version">© 2026 WafyOps • Made for Practice</span>
+            </div>
+        </aside>
+
+        <!-- Mobile Header Bar -->
+        <header class="mobile-header">
+            <div class="brand">
+                <i class="fa-solid fa-terminal brand-icon"></i>
+                <span class="brand-text">Wafy<span class="accent-text">Ops</span></span>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Main Workspace Area -->
+        <main class="workspace">
+            
+            <!-- SECTION: Dashboard -->
+            <section id="dashboard" class="tab-content active">
+                <div class="hero-section">
+                    <h1>Developer & Utility <span class="accent-text font-glow">Toolbox</span></h1>
+                    <p class="subtitle">A free suite of fast, secure, and daily web utilities built to simplify your digital tasks.</p>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-card" data-link="password-gen">
+                        <div class="card-glow"></div>
+                        <div class="card-icon"><i class="fa-solid fa-key"></i></div>
+                        <h3>Password Generator</h3>
+                        <p>Generate secure, customized passwords using client-side cryptographic functions.</p>
+                        <span class="card-action">Launch Tool <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+
+                    <div class="tool-card" data-link="text-converter">
+                        <div class="card-glow"></div>
+                        <div class="card-icon"><i class="fa-solid fa-font"></i></div>
+                        <h3>Text Case & Analytics</h3>
+                        <p>Perform rapid case mutations, strip unnecessary whitespace, and review live character/word statistics.</p>
+                        <span class="card-action">Launch Tool <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+
+                    <div class="tool-card" data-link="qr-gen">
+                        <div class="card-glow"></div>
+                        <div class="card-icon"><i class="fa-solid fa-qrcode"></i></div>
+                        <h3>QR Code Generator</h3>
+                        <p>Transform standard links, credentials, or texts into customized visual QR tags dynamically.</p>
+                        <span class="card-action">Launch Tool <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+
+                    <div class="tool-card" data-link="color-picker">
+                        <div class="card-glow"></div>
+                        <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+                        <h3>Color Palette</h3>
+                        <p>Inspect colors, view live HEX and RGB string outputs, and compile values on-the-fly.</p>
+                        <span class="card-action">Launch Tool <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: Password Generator -->
+            <section id="password-gen" class="tab-content">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-key accent-text"></i> Password Generator</h2>
+                    <p>Configure security parameters to construct client-side cryptographic keys.</p>
+                </div>
+
+                <div class="tool-wrapper">
+                    <div class="glass-panel output-panel">
+                        <div class="display-container">
+                            <input type="text" id="passwordDisplay" readonly placeholder="Click Generate">
+                            <button class="copy-btn tooltip" id="copyPassword" data-tooltip="Copy Password" aria-label="Copy Generated Password">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                        <div class="strength-meter-wrapper">
+                            <div class="strength-label">Security Evaluation: <span id="strengthText">Empty</span></div>
+                            <div class="strength-bar-container">
+                                <div class="strength-bar" id="strengthBar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel options-panel mt-4">
+                        <div class="option-row slider-container">
+                            <div class="slider-header">
+                                <span class="label">Character Count</span>
+                                <span class="slider-val" id="charLengthVal">16</span>
+                            </div>
+                            <input type="range" id="charLength" min="6" max="64" value="16">
+                        </div>
+
+                        <div class="options-grid">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="optUppercase" checked>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">A-Z (Uppercase)</span>
+                            </label>
+
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="optLowercase" checked>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">a-z (Lowercase)</span>
+                            </label>
+
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="optNumbers" checked>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">0-9 (Numerical digits)</span>
+                            </label>
+
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="optSymbols" checked>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">!@#$%^&* (Special chars)</span>
+                            </label>
+                        </div>
+
+                        <button id="generatePassword" class="btn btn-primary btn-block mt-4">
+                            <i class="fa-solid fa-gears"></i> Generate Password Array
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: Text Utilities -->
+            <section id="text-converter" class="tab-content">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-font accent-text"></i> Text Case & Formatting Counter</h2>
+                    <p>Refine inputs, convert casing conventions, and run lexical analyses instantly.</p>
+                </div>
+
+                <div class="glass-panel">
+                    <div class="textarea-container">
+                        <textarea id="textInput" placeholder="Begin typing or paste raw documentation values here..."></textarea>
+                        <button class="copy-btn tooltip absolute-copy" id="copyText" data-tooltip="Copy Output" aria-label="Copy input text">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <div class="analytics-bar">
+                        <div class="metric-card">
+                            <span class="metric-label">Characters</span>
+                            <span class="metric-val" id="charCount">0</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Words</span>
+                            <span class="metric-val" id="wordCount">0</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-label">Lines</span>
+                            <span class="metric-val" id="lineCount">0</span>
+                        </div>
+                    </div>
+
+                    <div class="actions-flex mt-4">
+                        <button class="btn btn-secondary text-action" data-action="upper">UPPERCASE</button>
+                        <button class="btn btn-secondary text-action" data-action="lower">lowercase</button>
+                        <button class="btn btn-secondary text-action" data-action="title">Title Case</button>
+                        <button class="btn btn-secondary text-action" data-action="strip">Remove Extra Spaces</button>
+                        <button class="btn btn-danger text-action" data-action="clear" id="btnClearText">
+                            <i class="fa-solid fa-trash-can"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: QR Code Generator -->
+            <section id="qr-gen" class="tab-content">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-qrcode accent-text"></i> Live QR Code Generator</h2>
+                    <p>Transform targets, links, or text strings into instantly shareable visual matrix codes.</p>
+                </div>
+
+                <div class="two-col-layout">
+                    <div class="glass-panel form-pane">
+                        <div class="form-group">
+                            <label for="qrInput">Target Content (URL, Text, or Payload)</label>
+                            <input type="text" id="qrInput" placeholder="https://github.com/">
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label>Design Preferences</label>
+                            <div class="options-grid mt-2">
+                                <div class="palette-input-group">
+                                    <span class="sub-label">Color Dark</span>
+                                    <input type="color" id="qrColorDark" value="#0b0f19">
+                                </div>
+                                <div class="palette-input-group">
+                                    <span class="sub-label">Color Light</span>
+                                    <input type="color" id="qrColorLight" value="#ffffff">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="generateQR" class="btn btn-primary btn-block mt-4">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Render Dynamic Code
+                        </button>
+                    </div>
+
+                    <div class="glass-panel flex-center flex-column preview-pane">
+                        <div class="qr-preview-box">
+                            <div id="qrcode"></div>
+                        </div>
+                        <button id="downloadQR" class="btn btn-secondary mt-4 btn-block" disabled>
+                            <i class="fa-solid fa-download"></i> Save Image File
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: Color Picker & Palette -->
+            <section id="color-picker" class="tab-content">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-palette accent-text"></i> Color Code & Palette Terminal</h2>
+                    <p>Select color values and copy accurate development definitions directly.</p>
+                </div>
+
+                <div class="two-col-layout">
+                    <div class="glass-panel flex-center flex-column">
+                        <div class="picker-container">
+                            <div class="custom-color-trigger">
+                                <i class="fa-solid fa-eye-dropper"></i>
+                            </div>
+                            <input type="color" id="primaryColorInput" value="#00d2ff" aria-label="Color Picker input">
+                        </div>
+                        <span class="picker-instruction mt-4">Click color wheel above to toggle system selector</span>
+                    </div>
+
+                    <div class="glass-panel flex-center flex-column gap-3">
+                        <!-- HEX Color Format -->
+                        <div class="color-display-group">
+                            <div class="meta">
+                                <span class="label">HEX format</span>
+                                <span class="val font-mono" id="hexDisplay">#00D2FF</span>
+                            </div>
+                            <button class="copy-btn tooltip" id="copyHex" data-tooltip="Copy HEX" aria-label="Copy hexadecimal value">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+
+                        <!-- RGB Color Format -->
+                        <div class="color-display-group">
+                            <div class="meta">
+                                <span class="label">RGB format</span>
+                                <span class="val font-mono" id="rgbDisplay">rgb(0, 210, 255)</span>
+                            </div>
+                            <button class="copy-btn tooltip" id="copyRgb" data-tooltip="Copy RGB" aria-label="Copy RGB value">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+
+                        <!-- HSL Color Format -->
+                        <div class="color-display-group">
+                            <div class="meta">
+                                <span class="label">HSL format</span>
+                                <span class="val font-mono" id="hslDisplay">hsl(191, 100%, 50%)</span>
+                            </div>
+                            <button class="copy-btn tooltip" id="copyHsl" data-tooltip="Copy HSL" aria-label="Copy HSL value">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- External Script Dependancy: QRCode JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
