@@ -1,6 +1,6 @@
-# 🚀 WafyDev - Developer & Utility Toolbox
+# 🚀 WafyOps - Developer & Utility Toolbox
 
-WafyDev is a premium, privacy-focused, and fully responsive client-side utility suite designed to simplify daily digital and development tasks. Built entirely with vanilla web technologies, it features a modern, dark-themed glassmorphic user interface with fluid micro-interactions.
+WafyOps is a premium, privacy-focused, and fully responsive client-side utility suite designed to simplify daily digital and development tasks. Built entirely with vanilla web technologies, it features a modern, dark-themed glassmorphic user interface with fluid micro-interactions.
 
 ---
 
