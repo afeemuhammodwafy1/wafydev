@@ -1,13 +1,13 @@
 # 🚀 WafyDev - Developer & Utility Toolbox
 
-WafyOps is a premium, privacy-focused, and fully responsive client-side utility suite designed to simplify daily digital and development tasks. Built entirely with vanilla web technologies, it features a modern, dark-themed glassmorphic user interface with fluid micro-interactions.
+WafyDev is a premium, privacy-focused, and fully responsive client-side utility suite designed to simplify daily digital and development tasks. Built entirely with vanilla web technologies, it features a modern, dark-themed glassmorphic user interface with fluid micro-interactions.
 
 ---
 
 ## 🌐 Live Demo
 
 Check out the live deployment of the application here:  
-🔗 **[Launch WafyOps Web App](https://afeemuhammodwafy1.github.io/wafyops/)**
+🔗 **[Launch WafyDev Web App](https://afeemuhammodwafy1.github.io/wafyops/)**
 
 ---
 
@@ -33,7 +33,7 @@ Check out the live deployment of the application here:
 
 ## 🚀 Getting Started
 
-Since WafyOps is entirely serverless and client-side, you can run it locally instantly without installing any dependencies!
+Since WafyDev is entirely serverless and client-side, you can run it locally instantly without installing any dependencies!
 
 1. Clone this repository:
 ```bash
