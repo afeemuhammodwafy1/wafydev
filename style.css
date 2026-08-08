@@ -106,12 +106,28 @@ h1, h2, h3, .brand-text {
     font-size: 0.85rem;
     font-weight: 500;
     transition: all var(--transition-speed) ease;
-    display: block;
+    
+    /* Flex properties to align the icon and text */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Style for the SVG icons inside the links */
+.nav-link svg {
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity var(--transition-speed) ease;
 }
 
 .nav-link:hover {
     color: var(--text-main);
     background: rgba(255, 255, 255, 0.03);
+}
+
+.nav-link:hover svg,
+.nav-link.active svg {
+    opacity: 1;
 }
 
 .nav-link.active {
@@ -128,7 +144,7 @@ h1, h2, h3, .brand-text {
 }
 
 /* ============================================================
-   NEW MAIN WRAPPER (Handles Scrolling + Footer position)
+   MAIN WRAPPER (Handles Scrolling + Footer position)
    ============================================================ */
 .content-wrapper {
     flex: 1;
@@ -197,7 +213,7 @@ h1, h2, h3, .brand-text {
    WORKSPACE (Main Content)
    ============================================================ */
 .workspace {
-    flex: 1 0 auto; /* Allows content to push the footer down naturally */
+    flex: 1 0 auto;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2.5rem 2rem;
@@ -951,7 +967,7 @@ input[type="color"]::-moz-color-swatch {
     width: 100%;
     background: var(--bg-sidebar);
     margin-top: auto;
-    flex-shrink: 0; /* Prevents the footer from shrinking */
+    flex-shrink: 0;
 }
 
 .footer-content {
@@ -997,8 +1013,6 @@ input[type="color"]::-moz-color-swatch {
 }
 
 @media (max-width: 768px) {
-    /* Removed body { flex-direction: column; } as the structure is fixed */
-
     .sidebar {
         display: none;
         position: fixed;
@@ -1024,7 +1038,6 @@ input[type="color"]::-moz-color-swatch {
 
     .workspace {
         padding: 1.5rem 1rem;
-        /* min-height removed */
     }
 
     .hero-section h1 {
