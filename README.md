@@ -36,22 +36,27 @@ wafydev/
 ├── script.js # Global JavaScript
 ├── robots.txt # Search engine crawl instructions
 ├── sitemap.xml # XML sitemap for SEO
-├── favicon-32x32.png # Favicon
-├── favicon-16x16.png # Favicon
-├── apple-touch-icon.png # Apple touch icon
-├── og-image.png # Open Graph image
-├── site.webmanifest # Web app manifest
-└── pages/ # All tool pages
-├── about.html # About page
-├── color.html # Color Palette tool
-├── countdown.html # Countdown Timer tool
-├── markdown.html # Markdown Preview tool
-├── notes.html # Note Taker tool
-├── password.html # Password Generator tool
-├── qr.html # QR Code Generator tool
-├── text-utils.html # Text Utilities tool
-├── timer.html # Study Timer tool
-└── typing.html # Typing Speed Test tool
+├── README.md # Project documentation
+├── password/
+│ └── index.html # Password Generator tool
+├── qr/
+│ └── index.html # QR Code Generator tool
+├── typing/
+│ └── index.html # Typing Speed Test tool
+├── timer/
+│ └── index.html # Study Timer tool
+├── markdown/
+│ └── index.html # Markdown Preview tool
+├── notes/
+│ └── index.html # Note Taker tool
+├── countdown/
+│ └── index.html # Countdown Timer tool
+├── text-utils/
+│ └── index.html # Text Utilities tool
+├── color/
+│ └── index.html # Color Palette tool
+└── about/
+└── index.html # About page
 
 ---
 
