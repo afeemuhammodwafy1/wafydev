@@ -3,23 +3,73 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WafyDev - Developer & Utility Toolbox</title>
+    <title>WafyDev - Free Online Tools: Password Generator, QR Code, Typing Test & More</title>
+    <meta name="description" content="WafyDev offers 9 free online tools: Password Generator, QR Code Generator, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette. 100% client-side, no data stored." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://dev.amwafy.xyz/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WafyDev" />
+    <meta property="og:title" content="WafyDev - Free Online Tools for Developers & Students" />
+    <meta property="og:description" content="9 free online tools: Password Generator, QR Code, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette. No registration required." />
+    <meta property="og:url" content="https://dev.amwafy.xyz/" />
+    <meta property="og:image" content="https://dev.amwafy.xyz/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@muhammodwafy" />
+    <meta name="twitter:creator" content="@muhammodwafy" />
+    <meta name="twitter:title" content="WafyDev - Free Online Tools for Developers & Students" />
+    <meta name="twitter:description" content="9 free online tools: Password Generator, QR Code, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette." />
+    <meta name="twitter:image" content="https://dev.amwafy.xyz/og-image.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "WafyDev",
+        "url": "https://dev.amwafy.xyz/",
+        "description": "9 free online tools: Password Generator, QR Code Generator, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Afee Muhammod Wafy",
+            "url": "https://www.amwafy.xyz/"
+        }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="style.css" as="style" />
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <div class="app-container">
+        <!-- Sidebar Navigation -->
         <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
             <div class="brand">
-                <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="4 17 10 11 4 5" />
-                    <line x1="12" y1="19" x2="20" y2="19" />
-                </svg>
-                <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
+                <a href="/" aria-label="WafyDev Home" class="brand-link">
+                    <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 17 10 11 4 5" />
+                        <line x1="12" y1="19" x2="20" y2="19" />
+                    </svg>
+                    <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
+                </a>
             </div>
             <nav class="nav-menu" role="tablist">
                 <button class="nav-item active" data-target="dashboard" role="tab" aria-selected="true" aria-controls="dashboard">
@@ -96,7 +146,6 @@
                         <polyline points="14 2 14 8 20 8" />
                         <line x1="16" y1="13" x2="8" y2="13" />
                         <line x1="16" y1="17" x2="8" y2="17" />
-                        <polyline points="10 9 9 9 8 9" />
                     </svg>
                     <span>Notes</span>
                 </button>
@@ -105,7 +154,6 @@
                         <circle cx="12" cy="12" r="10" />
                         <polyline points="12 6 12 12 16 14" />
                         <line x1="12" y1="6" x2="12" y2="2" />
-                        <line x1="12" y1="22" x2="12" y2="18" />
                     </svg>
                     <span>Countdown</span>
                 </button>
@@ -115,14 +163,15 @@
             </div>
         </aside>
 
+        <!-- Mobile Header -->
         <header class="mobile-header">
-            <div class="brand">
+            <a href="/" aria-label="WafyDev Home" class="brand-link mobile-brand-link">
                 <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="4 17 10 11 4 5" />
                     <line x1="12" y1="19" x2="20" y2="19" />
                 </svg>
                 <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
-            </div>
+            </a>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="3" y1="6" x2="21" y2="6" />
@@ -132,13 +181,14 @@
             </button>
         </header>
 
-        <main class="workspace">
+        <!-- Main Content -->
+        <main class="workspace" id="main-content">
 
             <!-- Dashboard -->
             <section id="dashboard" class="tab-content active" role="tabpanel">
                 <div class="hero-section">
                     <h1>Developer & Utility <span class="accent-text font-glow">Toolbox</span></h1>
-                    <p class="subtitle">9 powerful tools for developers, students, and everyday productivity.</p>
+                    <p class="subtitle">9 powerful free online tools for developers, students, and everyday productivity. 100% client-side — your data never leaves your device.</p>
                 </div>
                 <div class="tools-grid">
                     <div class="tool-card" data-link="password-gen">
@@ -149,8 +199,8 @@
                             </svg>
                         </div>
                         <h3>Password Generator</h3>
-                        <p>Secure, customizable passwords with strength meter.</p>
-                        <span class="card-action">Launch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+                        <p>Generate cryptographically secure, customizable passwords with a visual strength meter.</p>
+                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
                     </div>
                     <div class="tool-card" data-link="text-converter">
                         <div class="card-glow"></div>
@@ -162,8 +212,8 @@
                             </svg>
                         </div>
                         <h3>Text Utilities</h3>
-                        <p>Case conversion, analytics, and cleaning.</p>
-                        <span class="card-action">Launch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+                        <p>Convert text case, count characters/words/lines, remove extra spaces, and more.</p>
+                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
                     </div>
                     <div class="tool-card" data-link="qr-gen">
                         <div class="card-glow"></div>
@@ -176,9 +226,9 @@
                                 <line x1="8" y1="16" x2="16" y2="8" />
                             </svg>
                         </div>
-                        <h3>QR Generator</h3>
-                        <p>Dynamic QR codes with download support.</p>
-                        <span class="card-action">Launch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+                        <h3>QR Code Generator</h3>
+                        <p>Create and download customized QR codes from any URL or text with color options.</p>
+                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
                     </div>
                     <div class="tool-card" data-link="color-picker">
                         <div class="card-glow"></div>
@@ -193,8 +243,8 @@
                             </svg>
                         </div>
                         <h3>Color Palette</h3>
-                        <p>HEX, RGB, HSL conversion and copy.</p>
-                        <span class="card-action">Launch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+                        <p>Pick any color and instantly copy HEX, RGB, and HSL values for your design projects.</p>
+                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
                     </div>
                     <div class="tool-card" data-link="typing-test">
                         <div class="card-glow"></div>
@@ -207,8 +257,8 @@
                             </svg>
                         </div>
                         <h3>Typing Speed Test</h3>
-                        <p>WPM, accuracy, and error tracking.</p>
-                        <span class="card-action">Launch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+                        <p>Measure your typing speed (WPM), accuracy, and error rate with real-time feedback.</p>
+                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
                     </div>
                     <div class="tool-card" data-link="study-timer">
                         <div class="card-glow"></div>
@@ -218,9 +268,9 @@
                                 <polyline points="12 6 12 12 16 14" />
                             </svg>
                         </div>
-                        <h3>Study Timer</h3>
-                        <p>Pomodoro technique for focused work.</p>
-                        <span class="card-action">Launch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+                        <h3>Study Timer (Pomodoro)</h3>
+                        <p>Stay focused with the Pomodoro technique — customizable work and break sessions.</p>
+                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
                     </div>
                     <div class="tool-card" data-link="markdown-preview">
                         <div class="card-glow"></div>
@@ -232,8 +282,8 @@
                             </svg>
                         </div>
                         <h3>Markdown Preview</h3>
-                        <p>Real-time Markdown to HTML rendering.</p>
-                        <span class="card-action">Launch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+                        <p>Write Markdown and see live HTML preview — perfect for documentation and README files.</p>
+                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
                     </div>
                     <div class="tool-card" data-link="note-taker">
                         <div class="card-glow"></div>
@@ -246,8 +296,8 @@
                             </svg>
                         </div>
                         <h3>Note Taker</h3>
-                        <p>CRUD notes with search and localStorage.</p>
-                        <span class="card-action">Launch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+                        <p>Create, edit, delete, and search notes — all saved locally in your browser.</p>
+                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
                     </div>
                     <div class="tool-card" data-link="countdown">
                         <div class="card-glow"></div>
@@ -259,17 +309,17 @@
                             </svg>
                         </div>
                         <h3>Countdown Timer</h3>
-                        <p>Days, hours, minutes until your event.</p>
-                        <span class="card-action">Launch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+                        <p>Track days, hours, minutes, and seconds until your next big event or deadline.</p>
+                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
                     </div>
                 </div>
             </section>
 
-            <!-- Password Generator -->
+            <!-- ======== PASSWORD GENERATOR ======== -->
             <section id="password-gen" class="tab-content" role="tabpanel">
                 <div class="section-header">
                     <h2><span class="accent-text">Password Generator</span></h2>
-                    <p>Generate cryptographically secure passwords.</p>
+                    <p>Generate cryptographically secure passwords with customizable length and character sets.</p>
                 </div>
                 <div class="tool-wrapper">
                     <div class="glass-panel output-panel">
@@ -301,22 +351,22 @@
                             <label class="checkbox-container">
                                 <input type="checkbox" id="optUppercase" checked />
                                 <span class="checkmark"></span>
-                                <span class="checkbox-text">A-Z</span>
+                                <span class="checkbox-text">A-Z Uppercase</span>
                             </label>
                             <label class="checkbox-container">
                                 <input type="checkbox" id="optLowercase" checked />
                                 <span class="checkmark"></span>
-                                <span class="checkbox-text">a-z</span>
+                                <span class="checkbox-text">a-z Lowercase</span>
                             </label>
                             <label class="checkbox-container">
                                 <input type="checkbox" id="optNumbers" checked />
                                 <span class="checkmark"></span>
-                                <span class="checkbox-text">0-9</span>
+                                <span class="checkbox-text">0-9 Numbers</span>
                             </label>
                             <label class="checkbox-container">
                                 <input type="checkbox" id="optSymbols" checked />
                                 <span class="checkmark"></span>
-                                <span class="checkbox-text">!@#$%^&*</span>
+                                <span class="checkbox-text">!@#$%^&* Symbols</span>
                             </label>
                         </div>
                         <button id="generatePassword" class="btn btn-primary btn-block mt-4">
@@ -324,17 +374,17 @@
                                 <polyline points="23 4 23 10 17 10" />
                                 <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10" />
                             </svg>
-                            Generate
+                            Generate Password
                         </button>
                     </div>
                 </div>
             </section>
 
-            <!-- Text Utilities -->
+            <!-- ======== TEXT UTILITIES ======== -->
             <section id="text-converter" class="tab-content" role="tabpanel">
                 <div class="section-header">
                     <h2><span class="accent-text">Text Utilities</span></h2>
-                    <p>Transform and analyze your text.</p>
+                    <p>Transform text case, count characters/words/lines, and clean up extra spaces.</p>
                 </div>
                 <div class="glass-panel">
                     <div class="textarea-container">
@@ -367,17 +417,17 @@
                 </div>
             </section>
 
-            <!-- QR Generator -->
+            <!-- ======== QR GENERATOR ======== -->
             <section id="qr-gen" class="tab-content" role="tabpanel">
                 <div class="section-header">
                     <h2><span class="accent-text">QR Code Generator</span></h2>
-                    <p>Generate and download QR codes instantly.</p>
+                    <p>Create and download customized QR codes from any URL or text.</p>
                 </div>
                 <div class="two-col-layout">
                     <div class="glass-panel form-pane">
                         <div class="form-group">
                             <label for="qrInput">Content (URL or text)</label>
-                            <input type="text" id="qrInput" placeholder="https://example.com" value="https://wafydev.xyz" />
+                            <input type="text" id="qrInput" placeholder="https://example.com" value="https://dev.amwafy.xyz" />
                         </div>
                         <div class="form-group mt-4">
                             <label>Colors</label>
@@ -391,7 +441,7 @@
                                 <polyline points="23 4 23 10 17 10" />
                                 <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10" />
                             </svg>
-                            Generate
+                            Generate QR Code
                         </button>
                     </div>
                     <div class="glass-panel flex-center flex-column preview-pane">
@@ -408,11 +458,11 @@
                 </div>
             </section>
 
-            <!-- Color Picker -->
+            <!-- ======== COLOR PICKER ======== -->
             <section id="color-picker" class="tab-content" role="tabpanel">
                 <div class="section-header">
                     <h2><span class="accent-text">Color Palette</span></h2>
-                    <p>Pick a color and copy HEX, RGB, or HSL.</p>
+                    <p>Pick any color and instantly copy HEX, RGB, and HSL values.</p>
                 </div>
                 <div class="two-col-layout">
                     <div class="glass-panel flex-center flex-column">
@@ -459,11 +509,11 @@
                 </div>
             </section>
 
-            <!-- Typing Speed Test -->
+            <!-- ======== TYPING SPEED TEST ======== -->
             <section id="typing-test" class="tab-content" role="tabpanel">
                 <div class="section-header">
                     <h2><span class="accent-text">Typing Speed Test</span></h2>
-                    <p>Measure your WPM, accuracy, and errors.</p>
+                    <p>Measure your typing speed (WPM), accuracy, and error rate with real-time feedback.</p>
                 </div>
                 <div class="glass-panel">
                     <div class="typing-stats" style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;padding:0.5rem 0;">
@@ -479,20 +529,20 @@
                             <polyline points="23 4 23 10 17 10" />
                             <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10" />
                         </svg>
-                        Reset
+                        Reset Test
                     </button>
                 </div>
             </section>
 
-            <!-- Study Timer -->
+            <!-- ======== STUDY TIMER ======== -->
             <section id="study-timer" class="tab-content" role="tabpanel">
                 <div class="section-header">
                     <h2><span class="accent-text">Study Timer (Pomodoro)</span></h2>
-                    <p>Stay focused with work/break sessions.</p>
+                    <p>Stay focused with the Pomodoro technique — customizable work and break sessions.</p>
                 </div>
                 <div class="glass-panel text-center">
                     <div style="font-size:4rem;font-family:monospace;font-weight:700;margin:1rem 0;" id="timerDisplay">25:00</div>
-                    <div style="font-size:1.2rem;margin-bottom:0.5rem;"><span id="timerMode">Focus</span>  Sessions: <span id="timerSessions">0</span></div>
+                    <div style="font-size:1.2rem;margin-bottom:0.5rem;"><span id="timerMode">Focus</span> • Sessions: <span id="timerSessions">0</span></div>
                     <div class="actions-flex" style="justify-content:center;">
                         <button class="btn btn-primary" id="timerStart">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -522,22 +572,23 @@
                 </div>
             </section>
 
-            <!-- Markdown Preview -->
+            <!-- ======== MARKDOWN PREVIEW ======== -->
             <section id="markdown-preview" class="tab-content" role="tabpanel">
                 <div class="section-header">
                     <h2><span class="accent-text">Markdown Preview</span></h2>
-                    <p>Write Markdown, see HTML in real time.</p>
+                    <p>Write Markdown and see live HTML preview — perfect for documentation and README files.</p>
                 </div>
                 <div class="two-col-layout">
                     <div class="glass-panel">
                         <textarea id="markdownInput" style="width:100%;min-height:300px;padding:0.75rem;border-radius:8px;background:rgba(0,0,0,0.3);border:1px solid var(--border-color);color:var(--text-primary);font-family:monospace;resize:vertical;" placeholder="# Hello World&#10;Write **Markdown** here..."># Welcome to WafyDev
 
 ## Features
-- **Password Generator**
-- **QR Codes**
-- **Typing Test**
+- **Password Generator** - Secure passwords
+- **QR Codes** - Instant generation
+- **Typing Test** - Measure your speed
+- **Study Timer** - Stay focused
 
-> Built with care</textarea>
+> Built with care for developers and students</textarea>
                     </div>
                     <div class="glass-panel">
                         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
@@ -549,11 +600,11 @@
                 </div>
             </section>
 
-            <!-- Note Taker -->
+            <!-- ======== NOTE TAKER ======== -->
             <section id="note-taker" class="tab-content" role="tabpanel">
                 <div class="section-header">
                     <h2><span class="accent-text">Note Taker</span></h2>
-                    <p>Save, edit, and search your notes.</p>
+                    <p>Create, edit, delete, and search notes — all saved locally in your browser.</p>
                 </div>
                 <div class="glass-panel">
                     <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
@@ -582,11 +633,11 @@
                 </div>
             </section>
 
-            <!-- Countdown Timer -->
+            <!-- ======== COUNTDOWN TIMER ======== -->
             <section id="countdown" class="tab-content" role="tabpanel">
                 <div class="section-header">
                     <h2><span class="accent-text">Countdown Timer</span></h2>
-                    <p>How many days until your big event?</p>
+                    <p>Track days, hours, minutes, and seconds until your next big event or deadline.</p>
                 </div>
                 <div class="glass-panel">
                     <div class="form-group">
