@@ -1069,3 +1069,24 @@ input[type="color"]::-moz-color-swatch {
         font-size: 0.7rem;
     }
 }
+
+/* ALL-PAGE OVERFLOW FIX */
+*, *::before, *::after {
+    max-width: 100% !important;
+}
+
+html, body {
+    overflow-x: hidden !important;
+    position: relative;
+    width: 100%;
+}
+
+.workspace, 
+.glass-panel, 
+.display-container, 
+.two-col-layout,
+input, 
+textarea {
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
