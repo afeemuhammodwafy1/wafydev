@@ -1,14 +1,30 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     // ================================================================
-    // MOBILE MENU TOGGLE
+    // MOBILE SIDEBAR TOGGLE
     // ================================================================
     var menuToggle = document.getElementById("menuToggle");
-    var navLinks = document.getElementById("navLinks");
+    var sidebar = document.getElementById("sidebar");
 
-    if (menuToggle && navLinks) {
+    // Create overlay if it doesn't exist
+    var overlay = document.querySelector(".sidebar-overlay");
+    if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.className = "sidebar-overlay";
+        document.body.appendChild(overlay);
+    }
+
+    if (menuToggle && sidebar) {
         menuToggle.addEventListener("click", function() {
-            navLinks.classList.toggle("open");
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("active");
+        });
+    }
+
+    if (overlay) {
+        overlay.addEventListener("click", function() {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("active");
         });
     }
 
@@ -200,8 +216,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (!qrInput) return;
 
-        var qrInstance = null;
-
         function renderQR() {
             if (typeof QRCode === "undefined") {
                 setTimeout(renderQR, 500);
@@ -209,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             var text = qrInput.value.trim() || "https://dev.amwafy.xyz";
             qrcodeContainer.innerHTML = "";
-            qrInstance = new QRCode(qrcodeContainer, {
+            new QRCode(qrcodeContainer, {
                 text: text,
                 width: 180,
                 height: 180,

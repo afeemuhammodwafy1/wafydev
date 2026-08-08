@@ -7,61 +7,61 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://dev.amwafy.xyz/password</loc>
+    <loc>https://dev.amwafy.xyz/password/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dev.amwafy.xyz/qr</loc>
+    <loc>https://dev.amwafy.xyz/qr/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dev.amwafy.xyz/typing</loc>
+    <loc>https://dev.amwafy.xyz/typing/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev.amwafy.xyz/timer</loc>
+    <loc>https://dev.amwafy.xyz/timer/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev.amwafy.xyz/markdown</loc>
+    <loc>https://dev.amwafy.xyz/markdown/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev.amwafy.xyz/notes</loc>
+    <loc>https://dev.amwafy.xyz/notes/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev.amwafy.xyz/countdown</loc>
+    <loc>https://dev.amwafy.xyz/countdown/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev.amwafy.xyz/text-utils</loc>
+    <loc>https://dev.amwafy.xyz/text-utils/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev.amwafy.xyz/color</loc>
+    <loc>https://dev.amwafy.xyz/color/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dev.amwafy.xyz/about</loc>
+    <loc>https://dev.amwafy.xyz/about/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

@@ -1,18 +1,28 @@
 public_html/
 ├── index.html
 ├── 404.html
-├── robots.txt
-├── sitemap.xml
 ├── style.css
 ├── script.js
-├── pages/
-│   ├── password.html
-│   ├── qr.html
-│   ├── typing.html
-│   ├── timer.html
-│   ├── markdown.html
-│   ├── notes.html
-│   ├── countdown.html
-│   ├── text-utils.html
-│   ├── color.html
-│   └── about.html
+├── robots.txt
+├── sitemap.xml
+├── README.md
+├── password/
+│   └── index.html
+├── qr/
+│   └── index.html
+├── typing/
+│   └── index.html
+├── timer/
+│   └── index.html
+├── markdown/
+│   └── index.html
+├── notes/
+│   └── index.html
+├── countdown/
+│   └── index.html
+├── text-utils/
+│   └── index.html
+├── color/
+│   └── index.html
+└── about/
+    └── index.html

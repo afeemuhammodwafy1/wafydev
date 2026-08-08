@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Taker - WafyDev</title>
+    <meta name="description" content="Create, edit, delete, and search notes — all saved locally in your browser." />
+    <link rel="canonical" href="https://dev.amwafy.xyz/notes/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <div class="brand">
+            <a href="/" class="brand-link">
+                <svg class="brand-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="4 17 10 11 4 5" />
+                    <line x1="12" y1="19" x2="20" y2="19" />
+                </svg>
+                <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <a href="/" class="nav-link">Dashboard</a>
+            <a href="/password/" class="nav-link">Password Generator</a>
+            <a href="/qr/" class="nav-link">QR Generator</a>
+            <a href="/typing/" class="nav-link">Typing Test</a>
+            <a href="/timer/" class="nav-link">Study Timer</a>
+            <a href="/markdown/" class="nav-link">Markdown Preview</a>
+            <a href="/notes/" class="nav-link active">Note Taker</a>
+            <a href="/countdown/" class="nav-link">Countdown</a>
+            <a href="/text-utils/" class="nav-link">Text Utilities</a>
+            <a href="/color/" class="nav-link">Color Palette</a>
+            <a href="/about/" class="nav-link">About</a>
+        </nav>
+        <div class="sidebar-footer">
+            <span class="version">2026 WafyDev</span>
+        </div>
+    </aside>
+
+    <header class="mobile-header">
+        <a href="/" class="brand-link">
+            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 17 10 11 4 5" />
+                <line x1="12" y1="19" x2="20" y2="19" />
+            </svg>
+            <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+        </button>
+    </header>
+
+    <main class="workspace">
+        <div class="section-header">
+            <h1><span class="accent-text">Note Taker</span></h1>
+            <p>Create, edit, delete, and search notes — all saved locally in your browser.</p>
+        </div>
+
+        <div class="glass-panel">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <input type="text" id="noteInput" placeholder="Write a note..." style="flex:1;min-width:200px;padding:0.75rem;border-radius:8px;background:rgba(0,0,0,0.3);border:1px solid var(--border-color);color:var(--text-primary);" />
+                <button id="noteSave" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
+                        <polyline points="17 21 17 13 7 13 7 21" />
+                        <polyline points="7 3 7 8 15 8" />
+                    </svg>
+                    Save
+                </button>
+                <button id="noteClear" class="btn btn-danger">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="3 6 5 6 21 6" />
+                        <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+                    </svg>
+                    Clear All
+                </button>
+            </div>
+            <div style="margin-bottom:1rem;">
+                <input type="text" id="noteSearch" placeholder="Search notes..." style="width:100%;padding:0.75rem;border-radius:8px;background:rgba(0,0,0,0.3);border:1px solid var(--border-color);color:var(--text-primary);" />
+            </div>
+            <div style="color:var(--text-muted);font-size:0.8rem;margin-bottom:0.5rem;">Total: <span id="noteCount">0</span> notes</div>
+            <div id="noteList"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2026 Afee Muhammod Wafy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

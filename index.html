@@ -4,67 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WafyDev - Free Online Tools for Developers & Students</title>
-    <meta name="description" content="9 free online tools: Password Generator, QR Code Generator, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette. 100% client-side, no data stored." />
+    <meta name="description" content="9 free online tools: Password Generator, QR Code Generator, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette." />
     <link rel="canonical" href="https://dev.amwafy.xyz/" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="WafyDev" />
-    <meta property="og:title" content="WafyDev - Free Online Tools for Developers & Students" />
-    <meta property="og:description" content="9 free online tools: Password Generator, QR Code, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette." />
-    <meta property="og:url" content="https://dev.amwafy.xyz/" />
-    <meta property="og:image" content="https://dev.amwafy.xyz/og-image.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@muhammodwafy" />
-    <meta name="twitter:title" content="WafyDev - Free Online Tools for Developers & Students" />
-    <meta name="twitter:description" content="9 free online tools: Password Generator, QR Code, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="navbar-inner">
-            <a href="/" class="brand">
+
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <div class="brand">
+            <a href="/" class="brand-link">
                 <svg class="brand-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="4 17 10 11 4 5" />
                     <line x1="12" y1="19" x2="20" y2="19" />
                 </svg>
                 <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
             </a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <line x1="3" y1="12" x2="21" y2="12" />
-                    <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-            </button>
-            <div class="nav-links" id="navLinks">
-                <a href="/" class="active">Home</a>
-                <a href="/password">Password Generator</a>
-                <a href="/qr">QR Generator</a>
-                <a href="/typing">Typing Test</a>
-                <a href="/timer">Study Timer</a>
-                <a href="/markdown">Markdown Preview</a>
-                <a href="/notes">Note Taker</a>
-                <a href="/countdown">Countdown</a>
-                <a href="/text-utils">Text Utilities</a>
-                <a href="/color">Color Palette</a>
-                <a href="/about">About</a>
-            </div>
         </div>
-    </nav>
+        <nav class="nav-menu">
+            <a href="/" class="nav-link active">Dashboard</a>
+            <a href="/password/" class="nav-link">Password Generator</a>
+            <a href="/qr/" class="nav-link">QR Generator</a>
+            <a href="/typing/" class="nav-link">Typing Test</a>
+            <a href="/timer/" class="nav-link">Study Timer</a>
+            <a href="/markdown/" class="nav-link">Markdown Preview</a>
+            <a href="/notes/" class="nav-link">Note Taker</a>
+            <a href="/countdown/" class="nav-link">Countdown</a>
+            <a href="/text-utils/" class="nav-link">Text Utilities</a>
+            <a href="/color/" class="nav-link">Color Palette</a>
+            <a href="/about/" class="nav-link">About</a>
+        </nav>
+        <div class="sidebar-footer">
+            <span class="version">2026 WafyDev</span>
+        </div>
+    </aside>
+
+    <header class="mobile-header">
+        <a href="/" class="brand-link">
+            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 17 10 11 4 5" />
+                <line x1="12" y1="19" x2="20" y2="19" />
+            </svg>
+            <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+        </button>
+    </header>
 
     <main class="workspace">
         <section class="hero-section">
             <h1>Developer & Utility <span class="accent-text font-glow">Toolbox</span></h1>
-            <p class="subtitle">9 powerful free online tools for developers, students, and everyday productivity. 100% client-side — your data never leaves your device.</p>
+            <p class="subtitle">9 powerful free online tools for developers, students, and everyday productivity.</p>
         </section>
 
         <div class="tools-grid">
-            <a href="/password" class="tool-card">
+            <a href="/password/" class="tool-card">
                 <div class="card-glow"></div>
                 <div class="card-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -72,11 +73,11 @@
                     </svg>
                 </div>
                 <h3>Password Generator</h3>
-                <p>Generate cryptographically secure, customizable passwords with a visual strength meter.</p>
+                <p>Generate cryptographically secure passwords with strength meter.</p>
                 <span class="card-action">Launch Tool →</span>
             </a>
 
-            <a href="/qr" class="tool-card">
+            <a href="/qr/" class="tool-card">
                 <div class="card-glow"></div>
                 <div class="card-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -88,11 +89,11 @@
                     </svg>
                 </div>
                 <h3>QR Code Generator</h3>
-                <p>Create and download customized QR codes from any URL or text with color options.</p>
+                <p>Create and download customized QR codes instantly.</p>
                 <span class="card-action">Launch Tool →</span>
             </a>
 
-            <a href="/typing" class="tool-card">
+            <a href="/typing/" class="tool-card">
                 <div class="card-glow"></div>
                 <div class="card-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -103,11 +104,11 @@
                     </svg>
                 </div>
                 <h3>Typing Speed Test</h3>
-                <p>Measure your typing speed (WPM), accuracy, and error rate with real-time feedback.</p>
+                <p>Measure WPM, accuracy, and error rate with real-time feedback.</p>
                 <span class="card-action">Launch Tool →</span>
             </a>
 
-            <a href="/timer" class="tool-card">
+            <a href="/timer/" class="tool-card">
                 <div class="card-glow"></div>
                 <div class="card-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -116,11 +117,11 @@
                     </svg>
                 </div>
                 <h3>Study Timer</h3>
-                <p>Stay focused with the Pomodoro technique — customizable work and break sessions.</p>
+                <p>Pomodoro technique with customizable work and break sessions.</p>
                 <span class="card-action">Launch Tool →</span>
             </a>
 
-            <a href="/markdown" class="tool-card">
+            <a href="/markdown/" class="tool-card">
                 <div class="card-glow"></div>
                 <div class="card-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -130,11 +131,11 @@
                     </svg>
                 </div>
                 <h3>Markdown Preview</h3>
-                <p>Write Markdown and see live HTML preview — perfect for documentation and README files.</p>
+                <p>Write Markdown and see live HTML preview.</p>
                 <span class="card-action">Launch Tool →</span>
             </a>
 
-            <a href="/notes" class="tool-card">
+            <a href="/notes/" class="tool-card">
                 <div class="card-glow"></div>
                 <div class="card-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -145,11 +146,11 @@
                     </svg>
                 </div>
                 <h3>Note Taker</h3>
-                <p>Create, edit, delete, and search notes — all saved locally in your browser.</p>
+                <p>Create, edit, delete, and search notes with localStorage.</p>
                 <span class="card-action">Launch Tool →</span>
             </a>
 
-            <a href="/countdown" class="tool-card">
+            <a href="/countdown/" class="tool-card">
                 <div class="card-glow"></div>
                 <div class="card-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -159,11 +160,11 @@
                     </svg>
                 </div>
                 <h3>Countdown Timer</h3>
-                <p>Track days, hours, minutes, and seconds until your next big event or deadline.</p>
+                <p>Track days, hours, minutes until your event.</p>
                 <span class="card-action">Launch Tool →</span>
             </a>
 
-            <a href="/text-utils" class="tool-card">
+            <a href="/text-utils/" class="tool-card">
                 <div class="card-glow"></div>
                 <div class="card-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -173,11 +174,11 @@
                     </svg>
                 </div>
                 <h3>Text Utilities</h3>
-                <p>Convert text case, count characters/words/lines, remove extra spaces, and more.</p>
+                <p>Convert case, count characters/words/lines, strip spaces.</p>
                 <span class="card-action">Launch Tool →</span>
             </a>
 
-            <a href="/color" class="tool-card">
+            <a href="/color/" class="tool-card">
                 <div class="card-glow"></div>
                 <div class="card-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -190,7 +191,7 @@
                     </svg>
                 </div>
                 <h3>Color Palette</h3>
-                <p>Pick any color and instantly copy HEX, RGB, and HSL values for your design projects.</p>
+                <p>Pick colors and copy HEX, RGB, HSL values.</p>
                 <span class="card-action">Launch Tool →</span>
             </a>
         </div>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator - WafyDev</title>
+    <meta name="description" content="Generate cryptographically secure, customizable passwords with a visual strength meter." />
+    <link rel="canonical" href="https://dev.amwafy.xyz/password/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <div class="brand">
+            <a href="/" class="brand-link">
+                <svg class="brand-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="4 17 10 11 4 5" />
+                    <line x1="12" y1="19" x2="20" y2="19" />
+                </svg>
+                <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <a href="/" class="nav-link">Dashboard</a>
+            <a href="/password/" class="nav-link active">Password Generator</a>
+            <a href="/qr/" class="nav-link">QR Generator</a>
+            <a href="/typing/" class="nav-link">Typing Test</a>
+            <a href="/timer/" class="nav-link">Study Timer</a>
+            <a href="/markdown/" class="nav-link">Markdown Preview</a>
+            <a href="/notes/" class="nav-link">Note Taker</a>
+            <a href="/countdown/" class="nav-link">Countdown</a>
+            <a href="/text-utils/" class="nav-link">Text Utilities</a>
+            <a href="/color/" class="nav-link">Color Palette</a>
+            <a href="/about/" class="nav-link">About</a>
+        </nav>
+        <div class="sidebar-footer">
+            <span class="version">2026 WafyDev</span>
+        </div>
+    </aside>
+
+    <header class="mobile-header">
+        <a href="/" class="brand-link">
+            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 17 10 11 4 5" />
+                <line x1="12" y1="19" x2="20" y2="19" />
+            </svg>
+            <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+        </button>
+    </header>
+
+    <main class="workspace">
+        <div class="section-header">
+            <h1><span class="accent-text">Password Generator</span></h1>
+            <p>Generate cryptographically secure passwords with customizable length and character sets.</p>
+        </div>
+
+        <div class="tool-wrapper">
+            <div class="glass-panel output-panel">
+                <div class="display-container">
+                    <input type="text" id="passwordDisplay" readonly placeholder="Click Generate" />
+                    <button class="copy-btn tooltip" id="copyPassword" data-tooltip="Copy Password" aria-label="Copy generated password">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="strength-meter-wrapper">
+                    <div class="strength-label">Strength: <span id="strengthText">Empty</span></div>
+                    <div class="strength-bar-container">
+                        <div class="strength-bar" id="strengthBar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel options-panel mt-4">
+                <div class="option-row slider-container">
+                    <div class="slider-header">
+                        <span class="label">Length</span>
+                        <span class="slider-val" id="charLengthVal">16</span>
+                    </div>
+                    <input type="range" id="charLength" min="6" max="64" value="16" />
+                </div>
+
+                <div class="options-grid">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="optUppercase" checked />
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">A-Z Uppercase</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="optLowercase" checked />
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">a-z Lowercase</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="optNumbers" checked />
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">0-9 Numbers</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="optSymbols" checked />
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">!@#$%^&* Symbols</span>
+                    </label>
+                </div>
+
+                <button id="generatePassword" class="btn btn-primary btn-block mt-4">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 4 23 10 17 10" />
+                        <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10" />
+                    </svg>
+                    Generate Password
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2026 Afee Muhammod Wafy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
