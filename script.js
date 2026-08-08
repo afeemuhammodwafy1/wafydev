@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             qrLibraryLoaded = true;
 
-            var text = qrInput.value.trim() || "https://wafydev.xyz";
+            var text = qrInput.value.trim() || "https://dev.amwafy.xyz";
             qrcodeContainer.innerHTML = "";
             new QRCode(qrcodeContainer, {
                 text: text,
