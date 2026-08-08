@@ -5,23 +5,14 @@ document.addEventListener("DOMContentLoaded", function() {
     // ================================================================
     var menuToggle = document.getElementById("menuToggle");
     var sidebar = document.getElementById("sidebar");
+    var overlay = document.getElementById("sidebarOverlay");
 
-    // Create overlay if it doesn't exist
-    var overlay = document.querySelector(".sidebar-overlay");
-    if (!overlay) {
-        overlay = document.createElement("div");
-        overlay.className = "sidebar-overlay";
-        document.body.appendChild(overlay);
-    }
-
-    if (menuToggle && sidebar) {
+    if (menuToggle && sidebar && overlay) {
         menuToggle.addEventListener("click", function() {
             sidebar.classList.toggle("open");
             overlay.classList.toggle("active");
         });
-    }
 
-    if (overlay) {
         overlay.addEventListener("click", function() {
             sidebar.classList.remove("open");
             overlay.classList.remove("active");

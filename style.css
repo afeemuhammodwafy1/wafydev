@@ -21,13 +21,17 @@
     padding: 0;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: var(--bg-main);
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
-    min-height: 100vh;
     line-height: 1.5;
     display: flex;
+    min-height: 100vh;
 }
 
 h1, h2, h3, .brand-text {
@@ -163,6 +167,24 @@ h1, h2, h3, .brand-text {
 }
 
 /* ============================================================
+   SIDEBAR OVERLAY (Mobile)
+   ============================================================ */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 150;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* ============================================================
    WORKSPACE
    ============================================================ */
 .workspace {
@@ -170,7 +192,8 @@ h1, h2, h3, .brand-text {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2.5rem 2rem;
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 160px);
+    width: 100%;
 }
 
 /* ============================================================
@@ -915,19 +938,27 @@ input[type="color"]::-moz-color-swatch {
    ============================================================ */
 .footer {
     border-top: 1px solid var(--border-color);
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
     text-align: center;
-    margin-top: 2rem;
+    width: 100%;
+    background: var(--bg-sidebar);
+    margin-top: auto;
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .copyright {
     color: var(--text-muted);
     font-size: 0.8rem;
+    margin: 0;
 }
 
 /* ============================================================
@@ -986,6 +1017,7 @@ input[type="color"]::-moz-color-swatch {
 
     .workspace {
         padding: 1.5rem 1rem;
+        min-height: calc(100vh - 120px);
     }
 
     .hero-section h1 {
@@ -1032,20 +1064,17 @@ input[type="color"]::-moz-color-swatch {
         padding: 1rem;
     }
 
-    /* Mobile overlay */
-    .sidebar-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 150;
-    }
-
     .sidebar-overlay.active {
         display: block;
+    }
+
+    .footer {
+        padding: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
 
@@ -1073,5 +1102,13 @@ input[type="color"]::-moz-color-swatch {
     .qr-preview-box {
         width: 160px;
         height: 160px;
+    }
+
+    .footer {
+        padding: 0.75rem;
+    }
+
+    .copyright {
+        font-size: 0.7rem;
     }
 }
