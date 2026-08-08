@@ -21,8 +21,10 @@
     padding: 0;
 }
 
+/* Hide global double scrollbar and lock layout */
 html, body {
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
 body {
@@ -31,7 +33,6 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.5;
     display: flex;
-    min-height: 100vh;
 }
 
 h1, h2, h3, .brand-text {
@@ -45,16 +46,13 @@ h1, h2, h3, .brand-text {
    ============================================================ */
 .sidebar {
     width: 260px;
-    min-height: 100vh;
+    height: 100vh;
     background-color: var(--bg-sidebar);
     border-right: 1px solid var(--border-color);
     padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: sticky;
-    top: 0;
-    height: 100vh;
     flex-shrink: 0;
     overflow-y: auto;
     z-index: 100;
@@ -130,6 +128,17 @@ h1, h2, h3, .brand-text {
 }
 
 /* ============================================================
+   NEW MAIN WRAPPER (Handles Scrolling + Footer position)
+   ============================================================ */
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* ============================================================
    MOBILE HEADER
    ============================================================ */
 .mobile-header {
@@ -185,14 +194,13 @@ h1, h2, h3, .brand-text {
 }
 
 /* ============================================================
-   WORKSPACE
+   WORKSPACE (Main Content)
    ============================================================ */
 .workspace {
-    flex: 1;
+    flex: 1 0 auto; /* Allows content to push the footer down naturally */
     max-width: 1200px;
     margin: 0 auto;
     padding: 2.5rem 2rem;
-    min-height: calc(100vh - 160px);
     width: 100%;
 }
 
@@ -943,6 +951,7 @@ input[type="color"]::-moz-color-swatch {
     width: 100%;
     background: var(--bg-sidebar);
     margin-top: auto;
+    flex-shrink: 0; /* Prevents the footer from shrinking */
 }
 
 .footer-content {
@@ -988,9 +997,7 @@ input[type="color"]::-moz-color-swatch {
 }
 
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
+    /* Removed body { flex-direction: column; } as the structure is fixed */
 
     .sidebar {
         display: none;
@@ -1017,7 +1024,7 @@ input[type="color"]::-moz-color-swatch {
 
     .workspace {
         padding: 1.5rem 1rem;
-        min-height: calc(100vh - 120px);
+        /* min-height removed */
     }
 
     .hero-section h1 {
