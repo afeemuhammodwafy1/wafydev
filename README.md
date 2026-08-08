@@ -123,8 +123,6 @@ Select the main branch as the source
 
 Wait 2-3 minutes for deployment
 
-Your site will be live at https://yourusername.github.io/wafydev/
-
 Custom Domain
 Add a CNAME file with your domain (e.g., dev.amwafy.xyz)
 
