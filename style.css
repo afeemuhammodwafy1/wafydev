@@ -21,7 +21,6 @@
     padding: 0;
 }
 
-/* Hide global double scrollbar and lock layout */
 html, body {
     height: 100vh;
     overflow: hidden;
@@ -41,9 +40,6 @@ h1, h2, h3, .brand-text {
     letter-spacing: -0.02em;
 }
 
-/* ============================================================
-   SIDEBAR - LEFT SIDE
-   ============================================================ */
 .sidebar {
     width: 260px;
     height: 100vh;
@@ -106,14 +102,11 @@ h1, h2, h3, .brand-text {
     font-size: 0.85rem;
     font-weight: 500;
     transition: all var(--transition-speed) ease;
-    
-    /* Flex properties to align the icon and text */
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
-/* Style for the SVG icons inside the links */
 .nav-link svg {
     flex-shrink: 0;
     opacity: 0.7;
@@ -143,20 +136,16 @@ h1, h2, h3, .brand-text {
     text-align: center;
 }
 
-/* ============================================================
-   MAIN WRAPPER (Handles Scrolling + Footer position)
-   ============================================================ */
 .content-wrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
     height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 0;
 }
 
-/* ============================================================
-   MOBILE HEADER
-   ============================================================ */
 .mobile-header {
     display: none;
     background-color: var(--bg-sidebar);
@@ -191,9 +180,6 @@ h1, h2, h3, .brand-text {
     stroke: currentColor;
 }
 
-/* ============================================================
-   SIDEBAR OVERLAY (Mobile)
-   ============================================================ */
 .sidebar-overlay {
     display: none;
     position: fixed;
@@ -209,20 +195,15 @@ h1, h2, h3, .brand-text {
     display: block;
 }
 
-/* ============================================================
-   WORKSPACE (Main Content)
-   ============================================================ */
 .workspace {
     flex: 1 0 auto;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2.5rem 2rem;
     width: 100%;
+    min-width: 0;
 }
 
-/* ============================================================
-   HERO
-   ============================================================ */
 .hero-section {
     margin-bottom: 3rem;
     text-align: center;
@@ -244,9 +225,6 @@ h1, h2, h3, .brand-text {
     margin: 0 auto;
 }
 
-/* ============================================================
-   TOOLS GRID
-   ============================================================ */
 .tools-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -322,9 +300,6 @@ h1, h2, h3, .brand-text {
     opacity: 0.5;
 }
 
-/* ============================================================
-   GLASS PANEL
-   ============================================================ */
 .glass-panel {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -336,9 +311,6 @@ h1, h2, h3, .brand-text {
     overflow: hidden;
 }
 
-/* ============================================================
-   SECTION HEADER
-   ============================================================ */
 .section-header {
     margin-bottom: 2rem;
 }
@@ -353,9 +325,6 @@ h1, h2, h3, .brand-text {
     font-size: 1rem;
 }
 
-/* ============================================================
-   INPUTS & BUTTONS
-   ============================================================ */
 input[type="text"],
 input[type="number"],
 input[type="datetime-local"],
@@ -370,6 +339,7 @@ textarea {
     padding: 0.75rem 1rem;
     width: 100%;
     transition: all var(--transition-speed) ease;
+    min-width: 0;
 }
 
 input:focus,
@@ -498,12 +468,10 @@ textarea:focus {
     transform: translateX(-50%) scale(1);
 }
 
-/* ============================================================
-   PASSWORD GENERATOR
-   ============================================================ */
 .display-container {
     display: flex;
     gap: 0.75rem;
+    min-width: 0;
 }
 
 .display-container input {
@@ -511,6 +479,7 @@ textarea:focus {
     font-size: 1.15rem;
     letter-spacing: 0.05em;
     font-weight: 600;
+    min-width: 0;
 }
 
 .strength-meter-wrapper {
@@ -663,9 +632,6 @@ input[type="range"]::-moz-range-thumb {
     transform: rotate(45deg);
 }
 
-/* ============================================================
-   TEXT UTILITIES
-   ============================================================ */
 .textarea-container {
     position: relative;
     width: 100%;
@@ -718,18 +684,12 @@ input[type="range"]::-moz-range-thumb {
     gap: 0.75rem;
 }
 
-/* ============================================================
-   TWO COLUMN LAYOUT
-   ============================================================ */
 .two-col-layout {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 2rem;
 }
 
-/* ============================================================
-   FORM GROUP
-   ============================================================ */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -783,9 +743,6 @@ input[type="color"]::-moz-color-swatch {
     border-radius: 50%;
 }
 
-/* ============================================================
-   QR CODE
-   ============================================================ */
 .qr-preview-box {
     width: 200px;
     height: 200px;
@@ -804,9 +761,6 @@ input[type="color"]::-moz-color-swatch {
     max-height: 100%;
 }
 
-/* ============================================================
-   COLOR PICKER
-   ============================================================ */
 .picker-container {
     position: relative;
     width: 160px;
@@ -896,9 +850,6 @@ input[type="color"]::-moz-color-swatch {
     font-family: monospace;
 }
 
-/* ============================================================
-   MARKDOWN PREVIEW
-   ============================================================ */
 #markdownPreview h1,
 #markdownPreview h2,
 #markdownPreview h3 {
@@ -936,30 +887,18 @@ input[type="color"]::-moz-color-swatch {
     overflow-x: auto;
 }
 
-/* ============================================================
-   NOTE TAKER
-   ============================================================ */
 #noteList .note-item:hover {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* ============================================================
-   COUNTDOWN
-   ============================================================ */
 #countdownDisplay {
     transition: all 0.3s ease;
 }
 
-/* ============================================================
-   TYPING TEST
-   ============================================================ */
 #typingDisplay span {
     transition: color 0.1s ease;
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 .footer {
     border-top: 1px solid var(--border-color);
     padding: 1.5rem 2rem;
@@ -986,9 +925,6 @@ input[type="color"]::-moz-color-swatch {
     margin: 0;
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
 .flex-center {
     display: flex;
     align-items: center;
@@ -1082,6 +1018,7 @@ input[type="color"]::-moz-color-swatch {
 
     .glass-panel {
         padding: 1rem;
+        min-width: 0;
     }
 
     .sidebar-overlay.active {
