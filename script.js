@@ -1,95 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     // ================================================================
-    // 1. TAB SWITCHING & MOBILE MENU
+    // MOBILE MENU TOGGLE
     // ================================================================
-    var navItems = document.querySelectorAll(".nav-item");
-    var sections = document.querySelectorAll(".tab-content");
-    var dashboardCards = document.querySelectorAll(".tool-card");
-    var sidebar = document.getElementById("sidebar");
     var menuToggle = document.getElementById("menuToggle");
-    var sidebarOverlay = document.getElementById("sidebarOverlay");
+    var navLinks = document.getElementById("navLinks");
 
-    function switchTab(targetId) {
-        if (!targetId) return;
-
-        navItems.forEach(function(item) {
-            var isActive = item.getAttribute("data-target") === targetId;
-            item.classList.toggle("active", isActive);
-            item.setAttribute("aria-selected", isActive ? "true" : "false");
-        });
-
-        sections.forEach(function(section) {
-            section.classList.toggle("active", section.id === targetId);
-        });
-
-        closeSidebar();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-
-        if (targetId === "qr-gen") {
-            loadQRCodeLibrary();
-        }
-    }
-
-    function closeSidebar() {
-        if (sidebar.classList.contains("open")) {
-            sidebar.classList.remove("open");
-            sidebarOverlay.classList.remove("active");
-            menuToggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>';
-        }
-    }
-
-    navItems.forEach(function(item) {
-        item.addEventListener("click", function() {
-            var target = item.getAttribute("data-target");
-            switchTab(target);
-        });
-    });
-
-    dashboardCards.forEach(function(card) {
-        card.addEventListener("click", function() {
-            var target = card.getAttribute("data-link");
-            if (target) switchTab(target);
-        });
-    });
-
-    if (menuToggle) {
+    if (menuToggle && navLinks) {
         menuToggle.addEventListener("click", function() {
-            var isOpen = sidebar.classList.toggle("open");
-            sidebarOverlay.classList.toggle("active", isOpen);
-            menuToggle.innerHTML = isOpen ?
-                '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>' :
-                '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>';
+            navLinks.classList.toggle("open");
         });
     }
 
-    if (sidebarOverlay) {
-        sidebarOverlay.addEventListener("click", closeSidebar);
-    }
-
     // ================================================================
-    // 2. QR CODE LAZY LOAD
-    // ================================================================
-    var qrLibraryLoaded = false;
-
-    function loadQRCodeLibrary() {
-        if (qrLibraryLoaded || typeof QRCode !== "undefined") {
-            qrLibraryLoaded = true;
-            return;
-        }
-        var script = document.createElement("script");
-        script.src = "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js";
-        script.onload = function() {
-            qrLibraryLoaded = true;
-            if (document.getElementById("qr-gen").classList.contains("active")) {
-                renderQR();
-            }
-        };
-        document.head.appendChild(script);
-    }
-
-    // ================================================================
-    // 3. COPY TO CLIPBOARD
+    // COPY TO CLIPBOARD
     // ================================================================
     function copyToClipboard(text, buttonElement) {
         if (!text || text.trim() === "") return;
@@ -112,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // ================================================================
-    // 4. PASSWORD GENERATOR
+    // PASSWORD GENERATOR
     // ================================================================
     (function initPasswordGenerator() {
         var passwordDisplay = document.getElementById("passwordDisplay");
@@ -126,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function() {
         var generateBtn = document.getElementById("generatePassword");
         var strengthBar = document.getElementById("strengthBar");
         var strengthText = document.getElementById("strengthText");
+
+        if (!passwordDisplay) return;
 
         var charSets = {
             uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -202,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })();
 
     // ================================================================
-    // 5. TEXT UTILITIES
+    // TEXT UTILITIES
     // ================================================================
     (function initTextUtilities() {
         var textInput = document.getElementById("textInput");
@@ -211,6 +137,8 @@ document.addEventListener("DOMContentLoaded", function() {
         var wordCountEl = document.getElementById("wordCount");
         var lineCountEl = document.getElementById("lineCount");
         var actionButtons = document.querySelectorAll(".text-action");
+
+        if (!textInput) return;
 
         function updateCounters() {
             var val = textInput.value;
@@ -260,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })();
 
     // ================================================================
-    // 6. QR CODE GENERATOR
+    // QR CODE GENERATOR
     // ================================================================
     (function initQRGenerator() {
         var qrInput = document.getElementById("qrInput");
@@ -270,16 +198,18 @@ document.addEventListener("DOMContentLoaded", function() {
         var downloadQrBtn = document.getElementById("downloadQR");
         var qrcodeContainer = document.getElementById("qrcode");
 
+        if (!qrInput) return;
+
+        var qrInstance = null;
+
         function renderQR() {
-            if (!qrLibraryLoaded && typeof QRCode === "undefined") {
-                loadQRCodeLibrary();
+            if (typeof QRCode === "undefined") {
+                setTimeout(renderQR, 500);
                 return;
             }
-            qrLibraryLoaded = true;
-
             var text = qrInput.value.trim() || "https://dev.amwafy.xyz";
             qrcodeContainer.innerHTML = "";
-            new QRCode(qrcodeContainer, {
+            qrInstance = new QRCode(qrcodeContainer, {
                 text: text,
                 width: 180,
                 height: 180,
@@ -329,16 +259,11 @@ document.addEventListener("DOMContentLoaded", function() {
         qrColorLight.addEventListener("input", renderQR);
         qrInput.addEventListener("change", renderQR);
 
-        if (typeof QRCode !== "undefined") {
-            qrLibraryLoaded = true;
-            renderQR();
-        } else {
-            loadQRCodeLibrary();
-        }
+        renderQR();
     })();
 
     // ================================================================
-    // 7. COLOR PALETTE
+    // COLOR PALETTE
     // ================================================================
     (function initColorPalette() {
         var colorInput = document.getElementById("primaryColorInput");
@@ -348,6 +273,8 @@ document.addEventListener("DOMContentLoaded", function() {
         var copyHexBtn = document.getElementById("copyHex");
         var copyRgbBtn = document.getElementById("copyRgb");
         var copyHslBtn = document.getElementById("copyHsl");
+
+        if (!colorInput) return;
 
         function hexToRgb(hex) {
             hex = hex.replace(/^#/, "");
@@ -402,9 +329,19 @@ document.addEventListener("DOMContentLoaded", function() {
     })();
 
     // ================================================================
-    // 8. TYPING SPEED TEST
+    // TYPING SPEED TEST
     // ================================================================
     (function initTypingTest() {
+        var display = document.getElementById("typingDisplay");
+        var input = document.getElementById("typingInput");
+        var wpmEl = document.getElementById("typingWPM");
+        var accEl = document.getElementById("typingAccuracy");
+        var errEl = document.getElementById("typingErrors");
+        var statusEl = document.getElementById("typingStatus");
+        var resetBtn = document.getElementById("typingReset");
+
+        if (!display) return;
+
         var sampleTexts = [
             "The quick brown fox jumps over the lazy dog.",
             "Developers build software that solves real world problems.",
@@ -414,14 +351,6 @@ document.addEventListener("DOMContentLoaded", function() {
             "The best error message is the one that never shows up.",
             "Code is read more often than it is written."
         ];
-
-        var display = document.getElementById("typingDisplay");
-        var input = document.getElementById("typingInput");
-        var wpmEl = document.getElementById("typingWPM");
-        var accEl = document.getElementById("typingAccuracy");
-        var errEl = document.getElementById("typingErrors");
-        var statusEl = document.getElementById("typingStatus");
-        var resetBtn = document.getElementById("typingReset");
 
         var currentText = "";
         var startTime = null;
@@ -528,7 +457,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })();
 
     // ================================================================
-    // 9. STUDY TIMER (POMODORO)
+    // STUDY TIMER (POMODORO)
     // ================================================================
     (function initStudyTimer() {
         var display = document.getElementById("timerDisplay");
@@ -539,6 +468,8 @@ document.addEventListener("DOMContentLoaded", function() {
         var resetBtn = document.getElementById("timerReset");
         var workInput = document.getElementById("timerWorkDuration");
         var breakInput = document.getElementById("timerBreakDuration");
+
+        if (!display) return;
 
         var state = {
             mode: "work",
@@ -624,12 +555,15 @@ document.addEventListener("DOMContentLoaded", function() {
     })();
 
     // ================================================================
-    // 10. MARKDOWN PREVIEW
+    // MARKDOWN PREVIEW
     // ================================================================
     (function initMarkdownPreview() {
         var input = document.getElementById("markdownInput");
         var preview = document.getElementById("markdownPreview");
         var rawToggle = document.getElementById("markdownRawToggle");
+
+        if (!input) return;
+
         var showRaw = false;
         var markedLoaded = false;
 
@@ -674,7 +608,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })();
 
     // ================================================================
-    // 11. NOTE TAKER
+    // NOTE TAKER
     // ================================================================
     (function initNoteTaker() {
         var STORAGE_KEY = "wafydev_notes";
@@ -687,6 +621,8 @@ document.addEventListener("DOMContentLoaded", function() {
         var count = document.getElementById("noteCount");
         var saveBtn = document.getElementById("noteSave");
         var clearBtn = document.getElementById("noteClear");
+
+        if (!input) return;
 
         function loadNotes() {
             try { notes = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch (_) { notes = []; }
@@ -800,13 +736,16 @@ document.addEventListener("DOMContentLoaded", function() {
     })();
 
     // ================================================================
-    // 12. COUNTDOWN TIMER
+    // COUNTDOWN TIMER
     // ================================================================
     (function initCountdown() {
         var eventNameInput = document.getElementById("eventName");
         var eventDateInput = document.getElementById("eventDate");
         var startBtn = document.getElementById("startCountdown");
         var display = document.getElementById("countdownDisplay");
+
+        if (!eventNameInput) return;
+
         var interval = null;
 
         function updateCountdown() {
@@ -845,19 +784,5 @@ document.addEventListener("DOMContentLoaded", function() {
         startBtn.addEventListener("click", startCountdown);
         updateCountdown();
     })();
-
-    // ================================================================
-    // 13. KEYBOARD SHORTCUTS (Ctrl+1..9)
-    // ================================================================
-    document.addEventListener("keydown", function(e) {
-        if (e.ctrlKey && e.key >= "1" && e.key <= "9") {
-            var index = parseInt(e.key) - 1;
-            var targets = ["dashboard", "password-gen", "text-converter", "qr-gen", "color-picker", "typing-test", "study-timer", "markdown-preview", "note-taker"];
-            if (targets[index]) {
-                e.preventDefault();
-                switchTab(targets[index]);
-            }
-        }
-    });
 
 });

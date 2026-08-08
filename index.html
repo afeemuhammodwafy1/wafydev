@@ -3,109 +3,184 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WafyDev - Free Online Tools</title>
-    <meta name="description" content="WafyDev offers 9 free online tools: Password Generator, QR Code Generator, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette. 100% client-side, no data stored." />
-    <meta name="robots" content="index, follow" />
+    <title>WafyDev - Free Online Tools for Developers & Students</title>
+    <meta name="description" content="9 free online tools: Password Generator, QR Code Generator, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette. 100% client-side, no data stored." />
     <link rel="canonical" href="https://dev.amwafy.xyz/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="WafyDev" />
-    <meta property="og:title" content="WafyDev - Free Online Tools for Developers & Students" />
-    <meta property="og:description" content="9 free online tools: Password Generator, QR Code, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette. No registration required." />
-    <meta property="og:url" content="https://dev.amwafy.xyz/" />
-    <meta property="og:image" content="https://dev.amwafy.xyz/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@muhammodwafy" />
-    <meta name="twitter:creator" content="@muhammodwafy" />
-    <meta name="twitter:title" content="WafyDev - Free Online Tools for Developers & Students" />
-    <meta name="twitter:description" content="9 free online tools: Password Generator, QR Code, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette." />
-    <meta name="twitter:image" content="https://dev.amwafy.xyz/og-image.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "WafyDev",
-        "url": "https://dev.amwafy.xyz/",
-        "description": "9 free online tools: Password Generator, QR Code Generator, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette.",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Afee Muhammod Wafy",
-            "url": "https://www.amwafy.xyz/"
-        }
-    }
-    </script>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WafyDev" />
+    <meta property="og:title" content="WafyDev - Free Online Tools for Developers & Students" />
+    <meta property="og:description" content="9 free online tools: Password Generator, QR Code, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette." />
+    <meta property="og:url" content="https://dev.amwafy.xyz/" />
+    <meta property="og:image" content="https://dev.amwafy.xyz/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@muhammodwafy" />
+    <meta name="twitter:title" content="WafyDev - Free Online Tools for Developers & Students" />
+    <meta name="twitter:description" content="9 free online tools: Password Generator, QR Code, Typing Speed Test, Study Timer, Markdown Preview, Note Taker, Countdown, Text Utilities, and Color Palette." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preload" href="style.css" as="style" />
+    <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <div class="app-container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
-            <div class="brand">
-                <a href="/" aria-label="WafyDev Home" class="brand-link">
-                    <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="4 17 10 11 4 5" />
-                        <line x1="12" y1="19" x2="20" y2="19" />
-                    </svg>
-                    <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
-                </a>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-inner">
+            <a href="/" class="brand">
+                <svg class="brand-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="4 17 10 11 4 5" />
+                    <line x1="12" y1="19" x2="20" y2="19" />
+                </svg>
+                <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="/" class="active">Home</a>
+                <a href="/password">Password Generator</a>
+                <a href="/qr">QR Generator</a>
+                <a href="/typing">Typing Test</a>
+                <a href="/timer">Study Timer</a>
+                <a href="/markdown">Markdown Preview</a>
+                <a href="/notes">Note Taker</a>
+                <a href="/countdown">Countdown</a>
+                <a href="/text-utils">Text Utilities</a>
+                <a href="/color">Color Palette</a>
+                <a href="/about">About</a>
             </div>
-            <nav class="nav-menu" role="tablist">
-                <button class="nav-item active" data-target="dashboard" role="tab" aria-selected="true" aria-controls="dashboard">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="7" height="7" rx="1" />
-                        <rect x="14" y="3" width="7" height="7" rx="1" />
-                        <rect x="3" y="14" width="7" height="7" rx="1" />
-                        <rect x="14" y="14" width="7" height="7" rx="1" />
-                    </svg>
-                    <span>Dashboard</span>
-                </button>
-                <button class="nav-item" data-target="password-gen" role="tab" aria-selected="false" aria-controls="password-gen">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        </div>
+    </nav>
+
+    <main class="workspace">
+        <section class="hero-section">
+            <h1>Developer & Utility <span class="accent-text font-glow">Toolbox</span></h1>
+            <p class="subtitle">9 powerful free online tools for developers, students, and everyday productivity. 100% client-side — your data never leaves your device.</p>
+        </section>
+
+        <div class="tools-grid">
+            <a href="/password" class="tool-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                     </svg>
-                    <span>Password</span>
-                </button>
-                <button class="nav-item" data-target="text-converter" role="tab" aria-selected="false" aria-controls="text-converter">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="4 7 4 4 20 4 20 7" />
-                        <line x1="9" y1="20" x2="15" y2="20" />
-                        <line x1="12" y1="4" x2="12" y2="20" />
-                    </svg>
-                    <span>Text</span>
-                </button>
-                <button class="nav-item" data-target="qr-gen" role="tab" aria-selected="false" aria-controls="qr-gen">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                </div>
+                <h3>Password Generator</h3>
+                <p>Generate cryptographically secure, customizable passwords with a visual strength meter.</p>
+                <span class="card-action">Launch Tool →</span>
+            </a>
+
+            <a href="/qr" class="tool-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="2" width="6" height="6" rx="1" />
                         <rect x="16" y="2" width="6" height="6" rx="1" />
                         <rect x="2" y="16" width="6" height="6" rx="1" />
                         <line x1="8" y1="8" x2="16" y2="16" />
                         <line x1="8" y1="16" x2="16" y2="8" />
                     </svg>
-                    <span>QR Code</span>
-                </button>
-                <button class="nav-item" data-target="color-picker" role="tab" aria-selected="false" aria-controls="color-picker">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                </div>
+                <h3>QR Code Generator</h3>
+                <p>Create and download customized QR codes from any URL or text with color options.</p>
+                <span class="card-action">Launch Tool →</span>
+            </a>
+
+            <a href="/typing" class="tool-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <line x1="6" y1="8" x2="10" y2="8" />
+                        <line x1="6" y1="12" x2="14" y2="12" />
+                        <line x1="6" y1="16" x2="18" y2="16" />
+                    </svg>
+                </div>
+                <h3>Typing Speed Test</h3>
+                <p>Measure your typing speed (WPM), accuracy, and error rate with real-time feedback.</p>
+                <span class="card-action">Launch Tool →</span>
+            </a>
+
+            <a href="/timer" class="tool-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                </div>
+                <h3>Study Timer</h3>
+                <p>Stay focused with the Pomodoro technique — customizable work and break sessions.</p>
+                <span class="card-action">Launch Tool →</span>
+            </a>
+
+            <a href="/markdown" class="tool-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" />
+                        <polyline points="8 8 12 12 16 8" />
+                        <line x1="12" y1="12" x2="12" y2="16" />
+                    </svg>
+                </div>
+                <h3>Markdown Preview</h3>
+                <p>Write Markdown and see live HTML preview — perfect for documentation and README files.</p>
+                <span class="card-action">Launch Tool →</span>
+            </a>
+
+            <a href="/notes" class="tool-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                    </svg>
+                </div>
+                <h3>Note Taker</h3>
+                <p>Create, edit, delete, and search notes — all saved locally in your browser.</p>
+                <span class="card-action">Launch Tool →</span>
+            </a>
+
+            <a href="/countdown" class="tool-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                        <line x1="12" y1="6" x2="12" y2="2" />
+                    </svg>
+                </div>
+                <h3>Countdown Timer</h3>
+                <p>Track days, hours, minutes, and seconds until your next big event or deadline.</p>
+                <span class="card-action">Launch Tool →</span>
+            </a>
+
+            <a href="/text-utils" class="tool-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 7 4 4 20 4 20 7" />
+                        <line x1="9" y1="20" x2="15" y2="20" />
+                        <line x1="12" y1="4" x2="12" y2="20" />
+                    </svg>
+                </div>
+                <h3>Text Utilities</h3>
+                <p>Convert text case, count characters/words/lines, remove extra spaces, and more.</p>
+                <span class="card-action">Launch Tool →</span>
+            </a>
+
+            <a href="/color" class="tool-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10" />
                         <circle cx="12" cy="12" r="4" />
                         <line x1="12" y1="2" x2="12" y2="6" />
@@ -113,554 +188,20 @@
                         <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />
                         <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />
                     </svg>
-                    <span>Color</span>
-                </button>
-                <button class="nav-item" data-target="typing-test" role="tab" aria-selected="false" aria-controls="typing-test">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <line x1="6" y1="8" x2="10" y2="8" />
-                        <line x1="6" y1="12" x2="14" y2="12" />
-                        <line x1="6" y1="16" x2="18" y2="16" />
-                    </svg>
-                    <span>Typing</span>
-                </button>
-                <button class="nav-item" data-target="study-timer" role="tab" aria-selected="false" aria-controls="study-timer">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                    <span>Timer</span>
-                </button>
-                <button class="nav-item" data-target="markdown-preview" role="tab" aria-selected="false" aria-controls="markdown-preview">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" />
-                        <polyline points="8 8 12 12 16 8" />
-                        <line x1="12" y1="12" x2="12" y2="16" />
-                    </svg>
-                    <span>Markdown</span>
-                </button>
-                <button class="nav-item" data-target="note-taker" role="tab" aria-selected="false" aria-controls="note-taker">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                        <polyline points="14 2 14 8 20 8" />
-                        <line x1="16" y1="13" x2="8" y2="13" />
-                        <line x1="16" y1="17" x2="8" y2="17" />
-                    </svg>
-                    <span>Notes</span>
-                </button>
-                <button class="nav-item" data-target="countdown" role="tab" aria-selected="false" aria-controls="countdown">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                        <line x1="12" y1="6" x2="12" y2="2" />
-                    </svg>
-                    <span>Countdown</span>
-                </button>
-            </nav>
-            <div class="sidebar-footer">
-                <span class="version">2026 WafyDev v2.0</span>
-            </div>
-        </aside>
-
-        <!-- Mobile Header -->
-        <header class="mobile-header">
-            <a href="/" aria-label="WafyDev Home" class="brand-link mobile-brand-link">
-                <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="4 17 10 11 4 5" />
-                    <line x1="12" y1="19" x2="20" y2="19" />
-                </svg>
-                <span class="brand-text">Wafy<span class="accent-text">Dev</span></span>
+                </div>
+                <h3>Color Palette</h3>
+                <p>Pick any color and instantly copy HEX, RGB, and HSL values for your design projects.</p>
+                <span class="card-action">Launch Tool →</span>
             </a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <line x1="3" y1="12" x2="21" y2="12" />
-                    <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-            </button>
-        </header>
+        </div>
+    </main>
 
-        <!-- Main Content -->
-        <main class="workspace" id="main-content">
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2026 Afee Muhammod Wafy. All rights reserved.</p>
+        </div>
+    </footer>
 
-            <!-- Dashboard -->
-            <section id="dashboard" class="tab-content active" role="tabpanel">
-                <div class="hero-section">
-                    <h1>Developer & Utility <span class="accent-text font-glow">Toolbox</span></h1>
-                    <p class="subtitle">9 powerful free online tools for developers, students, and everyday productivity. 100% client-side — your data never leaves your device.</p>
-                </div>
-                <div class="tools-grid">
-                    <div class="tool-card" data-link="password-gen">
-                        <div class="card-glow"></div>
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                            </svg>
-                        </div>
-                        <h3>Password Generator</h3>
-                        <p>Generate cryptographically secure, customizable passwords with a visual strength meter.</p>
-                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
-                    </div>
-                    <div class="tool-card" data-link="text-converter">
-                        <div class="card-glow"></div>
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="4 7 4 4 20 4 20 7" />
-                                <line x1="9" y1="20" x2="15" y2="20" />
-                                <line x1="12" y1="4" x2="12" y2="20" />
-                            </svg>
-                        </div>
-                        <h3>Text Utilities</h3>
-                        <p>Convert text case, count characters/words/lines, remove extra spaces, and more.</p>
-                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
-                    </div>
-                    <div class="tool-card" data-link="qr-gen">
-                        <div class="card-glow"></div>
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="6" height="6" rx="1" />
-                                <rect x="16" y="2" width="6" height="6" rx="1" />
-                                <rect x="2" y="16" width="6" height="6" rx="1" />
-                                <line x1="8" y1="8" x2="16" y2="16" />
-                                <line x1="8" y1="16" x2="16" y2="8" />
-                            </svg>
-                        </div>
-                        <h3>QR Code Generator</h3>
-                        <p>Create and download customized QR codes from any URL or text with color options.</p>
-                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
-                    </div>
-                    <div class="tool-card" data-link="color-picker">
-                        <div class="card-glow"></div>
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10" />
-                                <circle cx="12" cy="12" r="4" />
-                                <line x1="12" y1="2" x2="12" y2="6" />
-                                <line x1="12" y1="18" x2="12" y2="22" />
-                                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />
-                                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />
-                            </svg>
-                        </div>
-                        <h3>Color Palette</h3>
-                        <p>Pick any color and instantly copy HEX, RGB, and HSL values for your design projects.</p>
-                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
-                    </div>
-                    <div class="tool-card" data-link="typing-test">
-                        <div class="card-glow"></div>
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="4" width="20" height="16" rx="2" />
-                                <line x1="6" y1="8" x2="10" y2="8" />
-                                <line x1="6" y1="12" x2="14" y2="12" />
-                                <line x1="6" y1="16" x2="18" y2="16" />
-                            </svg>
-                        </div>
-                        <h3>Typing Speed Test</h3>
-                        <p>Measure your typing speed (WPM), accuracy, and error rate with real-time feedback.</p>
-                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
-                    </div>
-                    <div class="tool-card" data-link="study-timer">
-                        <div class="card-glow"></div>
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10" />
-                                <polyline points="12 6 12 12 16 14" />
-                            </svg>
-                        </div>
-                        <h3>Study Timer (Pomodoro)</h3>
-                        <p>Stay focused with the Pomodoro technique — customizable work and break sessions.</p>
-                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
-                    </div>
-                    <div class="tool-card" data-link="markdown-preview">
-                        <div class="card-glow"></div>
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" />
-                                <polyline points="8 8 12 12 16 8" />
-                                <line x1="12" y1="12" x2="12" y2="16" />
-                            </svg>
-                        </div>
-                        <h3>Markdown Preview</h3>
-                        <p>Write Markdown and see live HTML preview — perfect for documentation and README files.</p>
-                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
-                    </div>
-                    <div class="tool-card" data-link="note-taker">
-                        <div class="card-glow"></div>
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                                <line x1="16" y1="13" x2="8" y2="13" />
-                                <line x1="16" y1="17" x2="8" y2="17" />
-                            </svg>
-                        </div>
-                        <h3>Note Taker</h3>
-                        <p>Create, edit, delete, and search notes — all saved locally in your browser.</p>
-                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
-                    </div>
-                    <div class="tool-card" data-link="countdown">
-                        <div class="card-glow"></div>
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10" />
-                                <polyline points="12 6 12 12 16 14" />
-                                <line x1="12" y1="6" x2="12" y2="2" />
-                            </svg>
-                        </div>
-                        <h3>Countdown Timer</h3>
-                        <p>Track days, hours, minutes, and seconds until your next big event or deadline.</p>
-                        <span class="card-action">Launch Tool <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ======== PASSWORD GENERATOR ======== -->
-            <section id="password-gen" class="tab-content" role="tabpanel">
-                <div class="section-header">
-                    <h2><span class="accent-text">Password Generator</span></h2>
-                    <p>Generate cryptographically secure passwords with customizable length and character sets.</p>
-                </div>
-                <div class="tool-wrapper">
-                    <div class="glass-panel output-panel">
-                        <div class="display-container">
-                            <input type="text" id="passwordDisplay" readonly placeholder="Click Generate" />
-                            <button class="copy-btn tooltip" id="copyPassword" data-tooltip="Copy Password" aria-label="Copy generated password">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="strength-meter-wrapper">
-                            <div class="strength-label">Strength: <span id="strengthText">Empty</span></div>
-                            <div class="strength-bar-container">
-                                <div class="strength-bar" id="strengthBar"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="glass-panel options-panel mt-4">
-                        <div class="option-row slider-container">
-                            <div class="slider-header">
-                                <span class="label">Length</span>
-                                <span class="slider-val" id="charLengthVal">16</span>
-                            </div>
-                            <input type="range" id="charLength" min="6" max="64" value="16" />
-                        </div>
-                        <div class="options-grid">
-                            <label class="checkbox-container">
-                                <input type="checkbox" id="optUppercase" checked />
-                                <span class="checkmark"></span>
-                                <span class="checkbox-text">A-Z Uppercase</span>
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" id="optLowercase" checked />
-                                <span class="checkmark"></span>
-                                <span class="checkbox-text">a-z Lowercase</span>
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" id="optNumbers" checked />
-                                <span class="checkmark"></span>
-                                <span class="checkbox-text">0-9 Numbers</span>
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" id="optSymbols" checked />
-                                <span class="checkmark"></span>
-                                <span class="checkbox-text">!@#$%^&* Symbols</span>
-                            </label>
-                        </div>
-                        <button id="generatePassword" class="btn btn-primary btn-block mt-4">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="23 4 23 10 17 10" />
-                                <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10" />
-                            </svg>
-                            Generate Password
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ======== TEXT UTILITIES ======== -->
-            <section id="text-converter" class="tab-content" role="tabpanel">
-                <div class="section-header">
-                    <h2><span class="accent-text">Text Utilities</span></h2>
-                    <p>Transform text case, count characters/words/lines, and clean up extra spaces.</p>
-                </div>
-                <div class="glass-panel">
-                    <div class="textarea-container">
-                        <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
-                        <button class="copy-btn tooltip absolute-copy" id="copyText" data-tooltip="Copy Text" aria-label="Copy text">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="analytics-bar">
-                        <div class="metric-card"><span class="metric-label">Characters</span><span class="metric-val" id="charCount">0</span></div>
-                        <div class="metric-card"><span class="metric-label">Words</span><span class="metric-val" id="wordCount">0</span></div>
-                        <div class="metric-card"><span class="metric-label">Lines</span><span class="metric-val" id="lineCount">0</span></div>
-                    </div>
-                    <div class="actions-flex mt-4">
-                        <button class="btn btn-secondary text-action" data-action="upper">UPPERCASE</button>
-                        <button class="btn btn-secondary text-action" data-action="lower">lowercase</button>
-                        <button class="btn btn-secondary text-action" data-action="title">Title Case</button>
-                        <button class="btn btn-secondary text-action" data-action="strip">Strip Spaces</button>
-                        <button class="btn btn-danger text-action" data-action="clear">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="3 6 5 6 21 6" />
-                                <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
-                            </svg>
-                            Clear
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ======== QR GENERATOR ======== -->
-            <section id="qr-gen" class="tab-content" role="tabpanel">
-                <div class="section-header">
-                    <h2><span class="accent-text">QR Code Generator</span></h2>
-                    <p>Create and download customized QR codes from any URL or text.</p>
-                </div>
-                <div class="two-col-layout">
-                    <div class="glass-panel form-pane">
-                        <div class="form-group">
-                            <label for="qrInput">Content (URL or text)</label>
-                            <input type="text" id="qrInput" placeholder="https://example.com" value="https://dev.amwafy.xyz" />
-                        </div>
-                        <div class="form-group mt-4">
-                            <label>Colors</label>
-                            <div class="options-grid mt-2">
-                                <div class="palette-input-group"><span class="sub-label">Dark</span><input type="color" id="qrColorDark" value="#0b0f19" /></div>
-                                <div class="palette-input-group"><span class="sub-label">Light</span><input type="color" id="qrColorLight" value="#ffffff" /></div>
-                            </div>
-                        </div>
-                        <button id="generateQR" class="btn btn-primary btn-block mt-4">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="23 4 23 10 17 10" />
-                                <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10" />
-                            </svg>
-                            Generate QR Code
-                        </button>
-                    </div>
-                    <div class="glass-panel flex-center flex-column preview-pane">
-                        <div class="qr-preview-box"><div id="qrcode"></div></div>
-                        <button id="downloadQR" class="btn btn-secondary mt-4 btn-block" disabled>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                <polyline points="7 10 12 15 17 10" />
-                                <line x1="12" y1="15" x2="12" y2="3" />
-                            </svg>
-                            Download PNG
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ======== COLOR PICKER ======== -->
-            <section id="color-picker" class="tab-content" role="tabpanel">
-                <div class="section-header">
-                    <h2><span class="accent-text">Color Palette</span></h2>
-                    <p>Pick any color and instantly copy HEX, RGB, and HSL values.</p>
-                </div>
-                <div class="two-col-layout">
-                    <div class="glass-panel flex-center flex-column">
-                        <div class="picker-container">
-                            <div class="custom-color-trigger">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 2a8 8 0 00-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 00-8-8z" />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                            </div>
-                            <input type="color" id="primaryColorInput" value="#00d2ff" aria-label="Color picker" />
-                        </div>
-                        <span class="picker-instruction mt-4">Click the wheel to pick a color</span>
-                    </div>
-                    <div class="glass-panel flex-center flex-column gap-3">
-                        <div class="color-display-group">
-                            <div class="meta"><span class="label">HEX</span><span class="val font-mono" id="hexDisplay">#00D2FF</span></div>
-                            <button class="copy-btn tooltip" id="copyHex" data-tooltip="Copy HEX">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="color-display-group">
-                            <div class="meta"><span class="label">RGB</span><span class="val font-mono" id="rgbDisplay">rgb(0, 210, 255)</span></div>
-                            <button class="copy-btn tooltip" id="copyRgb" data-tooltip="Copy RGB">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="color-display-group">
-                            <div class="meta"><span class="label">HSL</span><span class="val font-mono" id="hslDisplay">hsl(191, 100%, 50%)</span></div>
-                            <button class="copy-btn tooltip" id="copyHsl" data-tooltip="Copy HSL">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ======== TYPING SPEED TEST ======== -->
-            <section id="typing-test" class="tab-content" role="tabpanel">
-                <div class="section-header">
-                    <h2><span class="accent-text">Typing Speed Test</span></h2>
-                    <p>Measure your typing speed (WPM), accuracy, and error rate with real-time feedback.</p>
-                </div>
-                <div class="glass-panel">
-                    <div class="typing-stats" style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;padding:0.5rem 0;">
-                        <div><strong>WPM:</strong> <span id="typingWPM">0</span></div>
-                        <div><strong>Accuracy:</strong> <span id="typingAccuracy">0%</span></div>
-                        <div><strong>Errors:</strong> <span id="typingErrors">0</span></div>
-                        <div><strong>Status:</strong> <span id="typingStatus" style="color:var(--text-muted);">Start typing...</span></div>
-                    </div>
-                    <div id="typingDisplay" style="font-size:1.2rem;line-height:1.8;padding:1rem;background:rgba(0,0,0,0.2);border-radius:8px;margin-bottom:1rem;font-family:monospace;min-height:80px;color:var(--text-primary);"></div>
-                    <textarea id="typingInput" placeholder="Start typing the text above..." style="width:100%;padding:0.75rem;border-radius:8px;background:rgba(0,0,0,0.3);border:1px solid var(--border-color);color:var(--text-primary);font-family:monospace;resize:vertical;min-height:100px;"></textarea>
-                    <button id="typingReset" class="btn btn-secondary mt-4">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="23 4 23 10 17 10" />
-                            <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10" />
-                        </svg>
-                        Reset Test
-                    </button>
-                </div>
-            </section>
-
-            <!-- ======== STUDY TIMER ======== -->
-            <section id="study-timer" class="tab-content" role="tabpanel">
-                <div class="section-header">
-                    <h2><span class="accent-text">Study Timer (Pomodoro)</span></h2>
-                    <p>Stay focused with the Pomodoro technique — customizable work and break sessions.</p>
-                </div>
-                <div class="glass-panel text-center">
-                    <div style="font-size:4rem;font-family:monospace;font-weight:700;margin:1rem 0;" id="timerDisplay">25:00</div>
-                    <div style="font-size:1.2rem;margin-bottom:0.5rem;"><span id="timerMode">Focus</span> • Sessions: <span id="timerSessions">0</span></div>
-                    <div class="actions-flex" style="justify-content:center;">
-                        <button class="btn btn-primary" id="timerStart">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="5 3 19 12 5 21 5 3" />
-                            </svg>
-                            Start
-                        </button>
-                        <button class="btn btn-secondary" id="timerPause" disabled>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="6" y="4" width="4" height="16" />
-                                <rect x="14" y="4" width="4" height="16" />
-                            </svg>
-                            Pause
-                        </button>
-                        <button class="btn btn-danger" id="timerReset">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="23 4 23 10 17 10" />
-                                <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10" />
-                            </svg>
-                            Reset
-                        </button>
-                    </div>
-                    <div style="display:flex;gap:1rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap;">
-                        <div><label style="color:var(--text-muted);font-size:0.8rem;">Work (min)</label><input type="number" id="timerWorkDuration" value="25" min="1" max="60" style="width:60px;padding:0.25rem;border-radius:4px;background:rgba(0,0,0,0.3);border:1px solid var(--border-color);color:var(--text-primary);text-align:center;" /></div>
-                        <div><label style="color:var(--text-muted);font-size:0.8rem;">Break (min)</label><input type="number" id="timerBreakDuration" value="5" min="1" max="30" style="width:60px;padding:0.25rem;border-radius:4px;background:rgba(0,0,0,0.3);border:1px solid var(--border-color);color:var(--text-primary);text-align:center;" /></div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ======== MARKDOWN PREVIEW ======== -->
-            <section id="markdown-preview" class="tab-content" role="tabpanel">
-                <div class="section-header">
-                    <h2><span class="accent-text">Markdown Preview</span></h2>
-                    <p>Write Markdown and see live HTML preview — perfect for documentation and README files.</p>
-                </div>
-                <div class="two-col-layout">
-                    <div class="glass-panel">
-                        <textarea id="markdownInput" style="width:100%;min-height:300px;padding:0.75rem;border-radius:8px;background:rgba(0,0,0,0.3);border:1px solid var(--border-color);color:var(--text-primary);font-family:monospace;resize:vertical;" placeholder="# Hello World&#10;Write **Markdown** here..."># Welcome to WafyDev
-
-## Features
-- **Password Generator** - Secure passwords
-- **QR Codes** - Instant generation
-- **Typing Test** - Measure your speed
-- **Study Timer** - Stay focused
-
-> Built with care for developers and students</textarea>
-                    </div>
-                    <div class="glass-panel">
-                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-                            <span style="color:var(--text-muted);font-size:0.8rem;">Preview</span>
-                            <button id="markdownRawToggle" class="btn btn-secondary" style="padding:0.25rem 0.75rem;font-size:0.7rem;">Show Raw</button>
-                        </div>
-                        <div id="markdownPreview" style="padding:1rem;background:rgba(0,0,0,0.2);border-radius:8px;min-height:300px;overflow-y:auto;color:var(--text-primary);line-height:1.8;"></div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ======== NOTE TAKER ======== -->
-            <section id="note-taker" class="tab-content" role="tabpanel">
-                <div class="section-header">
-                    <h2><span class="accent-text">Note Taker</span></h2>
-                    <p>Create, edit, delete, and search notes — all saved locally in your browser.</p>
-                </div>
-                <div class="glass-panel">
-                    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
-                        <input type="text" id="noteInput" placeholder="Write a note..." style="flex:1;min-width:200px;padding:0.75rem;border-radius:8px;background:rgba(0,0,0,0.3);border:1px solid var(--border-color);color:var(--text-primary);" />
-                        <button id="noteSave" class="btn btn-primary">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
-                                <polyline points="17 21 17 13 7 13 7 21" />
-                                <polyline points="7 3 7 8 15 8" />
-                            </svg>
-                            Save
-                        </button>
-                        <button id="noteClear" class="btn btn-danger">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="3 6 5 6 21 6" />
-                                <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
-                            </svg>
-                            Clear All
-                        </button>
-                    </div>
-                    <div style="margin-bottom:1rem;">
-                        <input type="text" id="noteSearch" placeholder="Search notes..." style="width:100%;padding:0.75rem;border-radius:8px;background:rgba(0,0,0,0.3);border:1px solid var(--border-color);color:var(--text-primary);" />
-                    </div>
-                    <div style="color:var(--text-muted);font-size:0.8rem;margin-bottom:0.5rem;">Total: <span id="noteCount">0</span> notes</div>
-                    <div id="noteList"></div>
-                </div>
-            </section>
-
-            <!-- ======== COUNTDOWN TIMER ======== -->
-            <section id="countdown" class="tab-content" role="tabpanel">
-                <div class="section-header">
-                    <h2><span class="accent-text">Countdown Timer</span></h2>
-                    <p>Track days, hours, minutes, and seconds until your next big event or deadline.</p>
-                </div>
-                <div class="glass-panel">
-                    <div class="form-group">
-                        <label for="eventName">Event Name</label>
-                        <input type="text" id="eventName" placeholder="e.g., Exam, Birthday, Vacation" value="Exam" />
-                    </div>
-                    <div class="form-group mt-4">
-                        <label for="eventDate">Event Date & Time</label>
-                        <input type="datetime-local" id="eventDate" />
-                    </div>
-                    <button id="startCountdown" class="btn btn-primary btn-block mt-4">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="5 3 19 12 5 21 5 3" />
-                        </svg>
-                        Start Countdown
-                    </button>
-                    <div id="countdownDisplay" style="font-size:2rem;text-align:center;font-family:monospace;padding:1rem;margin-top:1rem;background:rgba(0,0,0,0.2);border-radius:8px;">Set a date above</div>
-                </div>
-            </section>
-
-        </main>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,18 @@
+public_html/
+├── index.html
+├── 404.html
+├── robots.txt
+├── sitemap.xml
+├── style.css
+├── script.js
+├── pages/
+│   ├── password.html
+│   ├── qr.html
+│   ├── typing.html
+│   ├── timer.html
+│   ├── markdown.html
+│   ├── notes.html
+│   ├── countdown.html
+│   ├── text-utils.html
+│   ├── color.html
+│   └── about.html
