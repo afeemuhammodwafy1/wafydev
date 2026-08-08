@@ -1090,3 +1090,8 @@ textarea {
     min-width: 0 !important;
     box-sizing: border-box !important;
 }
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
