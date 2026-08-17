@@ -1,210 +1,122 @@
-# WafyDev — Free Online Tools for Developers & Students
+# WafyDev 🛠️
 
-**WafyDev** is a free, open-source collection of 9 powerful online tools built for developers, students, and anyone who needs quick, reliable utilities. All tools run 100% client-side — your data never leaves your device. No registration required. No ads.
+> All-in-one developer toolbox with 9 powerful utilities for developers, productivity, and everyday use.
 
-🌐 **Live Site:** [https://dev.amwafy.xyz](https://dev.amwafy.xyz)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-00d9ff?style=for-the-badge)](https://dev.amwafy.xyz)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/afeemuhammodwafy1/wafydev)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
----
+## 🌐 Live Demo
 
-## 🛠️ Tools Included
+[https://dev.amwafy.xyz](https://dev.amwafy.xyz)
 
-| Tool | Description |
-|------|-------------|
-| **Password Generator** | Generate cryptographically secure, customizable passwords with a visual strength meter |
-| **QR Code Generator** | Create and download customized QR codes from any URL or text with color options |
-| **Typing Speed Test** | Measure your typing speed (WPM), accuracy, and error rate with real-time feedback |
-| **Study Timer (Pomodoro)** | Stay focused with customizable work and break sessions |
-| **Markdown Preview** | Write Markdown and see live HTML preview — perfect for documentation and README files |
-| **Note Taker** | Create, edit, delete, and search notes — all saved locally in your browser |
-| **Countdown Timer** | Track days, hours, minutes, and seconds until your next big event or deadline |
-| **Text Utilities** | Convert text case, count characters/words/lines, remove extra spaces, and more |
-| **Color Palette** | Pick any color and instantly copy HEX, RGB, and HSL values |
+## 📖 About
 
----
+**WafyDev** is an all-in-one developer toolbox featuring 9 useful utilities designed for developers, students, and everyday productivity.
 
-## 🚀 Live Demo
+The goal is simple: provide useful tools in one fast, clean, and easy-to-use web application.
 
-Visit the live site: [**dev.amwafy.xyz**](https://dev.amwafy.xyz)
+## 🧰 Utilities
 
----
+### 🔐 Password Generator
 
-## 📁 Project Structure
-wafydev/
-├── index.html # Home page
-├── 404.html # Custom 404 page
-├── style.css # Global styles
-├── script.js # Global JavaScript
-├── robots.txt # Search engine crawl instructions
-├── sitemap.xml # XML sitemap for SEO
-├── README.md # Project documentation
-├── password/
-│ └── index.html # Password Generator tool
-├── qr/
-│ └── index.html # QR Code Generator tool
-├── typing/
-│ └── index.html # Typing Speed Test tool
-├── timer/
-│ └── index.html # Study Timer tool
-├── markdown/
-│ └── index.html # Markdown Preview tool
-├── notes/
-│ └── index.html # Note Taker tool
-├── countdown/
-│ └── index.html # Countdown Timer tool
-├── text-utils/
-│ └── index.html # Text Utilities tool
-├── color/
-│ └── index.html # Color Palette tool
-└── about/
-└── index.html # About page
+Generate secure and customizable passwords quickly.
 
----
+### 📱 QR Generator
 
-## 💻 Technologies Used
+Generate QR codes quickly from your content.
 
-- **HTML5** — Semantic markup
-- **CSS3** — Custom properties, glassmorphism, responsive design
-- **JavaScript (ES6+)** — Vanilla JS, DOM manipulation, Web Crypto API
-- **Fonts** — Space Grotesk & Inter (Google Fonts)
-- **Libraries** — QRCode.js, Marked.js (lazy-loaded)
-- **Icons** — Custom SVG icons (no external icon libraries)
+### ⌨️ Typing Test
 
----
+Test your typing speed and improve your typing performance.
 
-## 🔧 Features
+### ⏱️ Study Timer
 
-- ✅ **100% Client-Side** — No data is sent to any server
-- ✅ **No Registration Required** — Open and use instantly
-- ✅ **No Ads** — Clean, distraction-free experience
-- ✅ **Responsive Design** — Works on desktop, tablet, and mobile
-- ✅ **Dark Theme** — Easy on the eyes
-- ✅ **Glassmorphism UI** — Modern, clean aesthetic
-- ✅ **SEO Optimized** — Meta tags, Open Graph, JSON-LD, sitemap
-- ✅ **Accessibility** — Semantic HTML, ARIA labels, keyboard navigation
-- ✅ **Keyboard Shortcuts** — Ctrl+1 through Ctrl+9 for quick navigation
-- ✅ **Copy to Clipboard** — One-click copy for all generated content
+A simple timer designed to help with focused study sessions and productivity.
 
----
+### 📝 Markdown Preview
 
-## 🛠️ Local Development
+Write Markdown and preview the rendered result instantly.
 
-### Prerequisites
-- Any modern web browser (Chrome, Firefox, Edge, Safari)
-- A code editor (VS Code recommended)
-- Basic knowledge of HTML, CSS, and JavaScript (for customization)
+### 📒 Note Taker
 
-### Setup Instructions
+Create and manage notes directly from the browser.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/wafydev.git
-   cd wafydev
-Run locally
+### ⏳ Countdown
 
-Open index.html directly in your browser
+Create countdowns and track remaining time easily.
 
-Or use Live Server in VS Code for better experience
+### 🔤 Text Utilities
 
-Customize
+Useful tools for working with and transforming text.
 
-Edit style.css for design changes
+### 🎨 Color Palette
 
-Edit script.js for functionality changes
+Explore and work with colors using an easy-to-use color palette tool.
 
-Edit individual HTML files in the pages/ folder
+## ✨ Highlights
 
-🌐 Deployment
-GitHub Pages (Recommended)
-Push all files to a GitHub repository
+- ⚡ Fast and lightweight
+- 🛠️ 9 useful utilities
+- 📱 Responsive design
+- 🎨 Clean modern interface
+- 🔒 Privacy-focused
+- 💻 Developer-friendly
 
-Go to Settings → Pages
+## 🛠️ Tech Stack
 
-Select the main branch as the source
+- HTML5
+- CSS3
+- JavaScript
 
-Wait 2-3 minutes for deployment
+## 🚀 Getting Started
 
-Custom Domain
-Add a CNAME file with your domain (e.g., dev.amwafy.xyz)
+### Clone the repository
 
-Configure DNS records with your domain provider
+```bash
+git clone https://github.com/afeemuhammodwafy1/wafydev.git
+cd wafydev
+```
 
-Update the canonical URL in all HTML files
+### Run locally
 
-📊 SEO & Performance
-✅ Google Search Console ready
+Open `index.html` in your browser.
 
-✅ XML Sitemap included (sitemap.xml)
+For development, you can also use a local development server such as VS Code Live Server.
 
-✅ Robots.txt included (robots.txt)
+## 🌍 Deployment
 
-✅ Open Graph tags for social sharing
+The live version of WafyDev is available at:
 
-✅ Twitter Cards for Twitter sharing
+[https://dev.amwafy.xyz](https://dev.amwafy.xyz)
 
-✅ JSON-LD Schema for rich snippets
+## 🤝 Contributing
 
-✅ Preconnect & Preload for faster loading
+Contributions, suggestions, bug reports, and feature requests are welcome.
 
-✅ Lazy-loaded QR and Markdown libraries
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Commit your changes
+5. Push to your branch
+6. Open a Pull Request
 
-🤝 Contributing
-Contributions, issues, and feature requests are welcome!
+## 📄 License
 
-Fork the repository
+This project is licensed under the MIT License.
 
-Create a new branch (git checkout -b feature/amazing-feature)
+## 👨‍💻 Author
 
-Commit your changes (git commit -m 'Add some amazing feature')
+**Afee Muhammod Wafy**
 
-Push to the branch (git push origin feature/amazing-feature)
+- GitHub: [@afeemuhammodwafy1](https://github.com/afeemuhammodwafy1)
 
-Open a Pull Request
+## ⭐ Support
 
-📝 License
-This project is open-source and available under the MIT License.
-
-🙏 Acknowledgments
-QRCode.js — GitHub
-
-Marked.js — GitHub
-
-Google Fonts — Space Grotesk & Inter
-
-📧 Contact
-Afee Muhammod Wafy
-
-Portfolio: amwafy.xyz
-
-GitHub: @afeemuhammodwafy1
-
-LinkedIn: afeemuhammodwafy1
-
-Email: afeemuhammodwafy@yahoo.com
-
-⭐ Support
-If you find this project useful, please give it a ⭐ on GitHub and share it with others!
-
-Built with ❤️ by Afee Muhammod Wafy
+If you find WafyDev useful, consider giving the repository a ⭐ on GitHub.
 
 ---
 
-## 📌 What This README Includes
-
-| Section | Purpose |
-|---------|---------|
-| **Title & Description** | Explains what WafyDev is |
-| **Tools List** | Shows all 9 tools at a glance |
-| **Live Demo** | Direct link to the site |
-| **Project Structure** | Shows the folder/file organization |
-| **Technologies Used** | Lists all tech stack |
-| **Features** | Highlights key features |
-| **Local Development** | Instructions for setting up locally |
-| **Deployment** | GitHub Pages + Custom Domain setup |
-| **SEO & Performance** | Lists all SEO optimizations |
-| **Contributing** | Guidelines for contributions |
-| **License** | MIT License notice |
-| **Acknowledgments** | Credits to libraries used |
-| **Contact** | Your contact information |
-| **Support** | Encourages stars and sharing |
-
----
+**Built with ❤️ by Afee Muhammod Wafy**
