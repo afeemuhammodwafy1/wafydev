@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QR Code Generator - WafyDev</title>
-    <meta name="description" content="Create and download customized QR codes from URL, Wi‑Fi, vCard or Location." />
+    <meta name="description" content="Create and download customized QR codes from URL, Wi‑Fi, vCard, Location or Event." />
     <link rel="canonical" href="https://dev.amwafy.xyz/qr/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -328,6 +328,10 @@
             color: var(--text-primary);
         }
 
+        .dynamic-fields input[type="datetime-local"] {
+            color-scheme: dark;
+        }
+
         /* ===== Buttons ===== */
         .btn {
             display: inline-flex;
@@ -598,7 +602,7 @@
         <main class="workspace">
             <div class="section-header">
                 <h1><span class="accent-text">QR Code Generator</span></h1>
-                <p>Create and download customized QR codes for URL, Wi‑Fi, vCard or Location.</p>
+                <p>Create and download customized QR codes for URL, Wi‑Fi, vCard, Location or Event.</p>
             </div>
 
             <div class="two-col-layout">
@@ -609,6 +613,7 @@
                         <button class="type-btn" data-type="wifi">Wi‑Fi</button>
                         <button class="type-btn" data-type="vcard">vCard</button>
                         <button class="type-btn" data-type="location">Location</button>
+                        <button class="type-btn" data-type="event">Event</button>
                     </div>
 
                     <!-- Dynamic fields container -->
@@ -676,6 +681,19 @@
             // ---------- state ----------
             let currentType = 'url';
 
+            // ---------- helper: format date for iCalendar ----------
+            function formatICalDate(dateStr) {
+                if (!dateStr) return '';
+                const d = new Date(dateStr);
+                const year = d.getFullYear();
+                const month = String(d.getMonth() + 1).padStart(2, '0');
+                const day = String(d.getDate()).padStart(2, '0');
+                const hours = String(d.getHours()).padStart(2, '0');
+                const minutes = String(d.getMinutes()).padStart(2, '0');
+                const seconds = String(d.getSeconds()).padStart(2, '0');
+                return `${year}${month}${day}T${hours}${minutes}${seconds}`;
+            }
+
             // ---------- field definitions ----------
             const fieldDefs = {
                 url: {
@@ -688,7 +706,7 @@
                     fields: [
                         { id: 'wifi_ssid', label: 'Network name (SSID)', placeholder: 'MyWiFi', value: '' },
                         { id: 'wifi_password', label: 'Password', placeholder: '••••••••', value: '' },
-                        { id: 'wifi_encryption', label: 'Encryption', placeholder: 'WPA/WPA2', value: 'WPA', options: ['WPA', 'WEP', 'nopass'] }
+                        { id: 'wifi_encryption', label: 'Encryption', value: 'WPA', options: ['WPA', 'WEP', 'nopass'] }
                     ],
                     build: (vals) => {
                         const ssid = vals.wifi_ssid || '';
@@ -740,6 +758,47 @@
                         if (q) return `geo:0,0?q=${encodeURIComponent(q)}`;
                         return '';
                     }
+                },
+                event: {
+                    fields: [
+                        { id: 'event_name', label: 'Event Name', placeholder: 'Conference 2026', value: '' },
+                        { id: 'event_start', label: 'Start Date & Time', type: 'datetime-local', value: '' },
+                        { id: 'event_end', label: 'End Date & Time', type: 'datetime-local', value: '' },
+                        { id: 'event_location', label: 'Location', placeholder: 'Convention Center, New York', value: '' },
+                        { id: 'event_description', label: 'Description (optional)', placeholder: 'Annual tech conference', value: '', textarea: true }
+                    ],
+                    build: (vals) => {
+                        const name = vals.event_name || '';
+                        const start = vals.event_start || '';
+                        const end = vals.event_end || '';
+                        const location = vals.event_location || '';
+                        const description = vals.event_description || '';
+
+                        if (!name || !start || !end) return '';
+
+                        // Build iCalendar VEVENT format
+                        const startFormatted = formatICalDate(start);
+                        const endFormatted = formatICalDate(end);
+                        
+                        // Generate unique UID
+                        const uid = `event-${Date.now()}-${Math.random().toString(36).substr(2, 9)}@wafydev`;
+                        
+                        let ical = 'BEGIN:VCALENDAR\n';
+                        ical += 'VERSION:2.0\n';
+                        ical += 'PRODID:-//WafyDev//QR Event//EN\n';
+                        ical += 'CALSCALE:GREGORIAN\n';
+                        ical += 'BEGIN:VEVENT\n';
+                        ical += `UID:${uid}\n`;
+                        ical += `SUMMARY:${name}\n`;
+                        if (location) ical += `LOCATION:${location}\n`;
+                        if (description) ical += `DESCRIPTION:${description}\n`;
+                        ical += `DTSTART:${startFormatted}\n`;
+                        ical += `DTEND:${endFormatted}\n`;
+                        ical += 'END:VEVENT\n';
+                        ical += 'END:VCALENDAR';
+                        
+                        return ical;
+                    }
                 }
             };
 
@@ -754,10 +813,11 @@
                         let opts = f.options.map(opt => `<option value="${opt}" ${opt===val?'selected':''}>${opt}</option>`).join('');
                         html += `<div class="form-group"><label>${f.label}</label><select id="field_${f.id}" class="field-input">${opts}</select></div>`;
                     } else {
-                        const isTextarea = f.id === 'vcard_note' || f.id === 'email_body';
+                        const isTextarea = f.textarea || false;
                         const tag = isTextarea ? 'textarea' : 'input';
-                        const typeAttr = (f.id === 'email' || f.id === 'url') ? 'type="url"' : (f.id.includes('phone')||f.id.includes('number')||f.id==='sms_number') ? 'type="tel"' : 'type="text"';
-                        html += `<div class="form-group"><label>${f.label}</label><${tag} id="field_${f.id}" class="field-input" ${typeAttr} placeholder="${f.placeholder || ''}" value="${val}">${isTextarea ? val : ''}</${tag}></div>`;
+                        const typeAttr = f.type ? `type="${f.type}"` : (f.id === 'email' || f.id === 'url') ? 'type="url"' : (f.id.includes('phone')||f.id.includes('number')||f.id==='sms_number') ? 'type="tel"' : 'type="text"';
+                        const valueAttr = !isTextarea ? `value="${val}"` : '';
+                        html += `<div class="form-group"><label>${f.label}</label><${tag} id="field_${f.id}" class="field-input" ${typeAttr} placeholder="${f.placeholder || ''}" ${valueAttr}>${isTextarea ? val : ''}</${tag}></div>`;
                     }
                 });
                 fieldsContainer.innerHTML = html;
