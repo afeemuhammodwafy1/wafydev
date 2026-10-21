@@ -12,6 +12,12 @@
 
 [https://dev.amwafy.xyz](https://dev.amwafy.xyz)
 
+## 🖼️ Preview
+
+<p align="center">
+  <img src="docs/images/wafydev-banner.webp" alt="WafyDev developer and utility toolbox dashboard preview" width="100%">
+</p>
+
 ## 📖 About
 
 **WafyDev** is an all-in-one developer toolbox featuring 9 useful utilities designed for developers, students, and everyday productivity.
@@ -107,11 +113,13 @@ Contributions, suggestions, bug reports, and feature requests are welcome.
 
 This project is licensed under the MIT License.
 
-## 👨‍💻 Author
+## 🏢 About Wafyro Software
 
-**Afee Muhammod Wafy**
+**WafyDev** is a product of **Wafyro Software**.
 
-- GitHub: [@afeemuhammodwafy1](https://github.com/afeemuhammodwafy1)
+**Founder and Software Developer:** Afee Muhammod Wafy  
+**GitHub:** [@afeemuhammodwafy1](https://github.com/afeemuhammodwafy1)  
+**Live website:** [dev.amwafy.xyz](https://dev.amwafy.xyz)
 
 ## ⭐ Support
 
@@ -119,4 +127,4 @@ If you find WafyDev useful, consider giving the repository a ⭐ on GitHub.
 
 ---
 
-**Built with ❤️ by Afee Muhammod Wafy**
+**A product of Wafyro Software · Built by Afee Muhammod Wafy**
