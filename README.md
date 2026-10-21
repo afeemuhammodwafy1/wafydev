@@ -118,8 +118,7 @@ This project is licensed under the MIT License.
 **WafyDev** is a product of **Wafyro Software**.
 
 **Founder and Software Developer:** Afee Muhammod Wafy  
-**GitHub:** [@afeemuhammodwafy1](https://github.com/afeemuhammodwafy1)  
-**Live website:** [dev.amwafy.xyz](https://dev.amwafy.xyz)
+
 
 ## ⭐ Support
 
